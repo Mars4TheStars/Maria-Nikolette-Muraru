@@ -1,17 +1,48 @@
 <!DOCTYPE html> 
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <head>
 <style>
-.newspaper {
-  column-count: 3;
-   column-gap: 40px;
-  column-rule-style: solid;
-  column-rule-width: 1px;
+/* Header */
+header {
+  padding: 10px;
+  text-align: center;
+  background: #0BC9CD;
+  color: white;
 }
+
+
+/* Top navigation bar */
+.navbar {
+  display: flex;
+  background-color: #a0eaff;
+}
+
+/* Navigation bar links */
+.navbar a {
+  color: rgb(0, 81, 43);
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #664147;
+}
+
 </style>
 </head>
-<body>
+
 
 <head>
 <style>
@@ -30,65 +61,15 @@
 </style>
 </head>
 
-<head>
-<style>
-.button {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-</style>
-</head>
-<body>
-
-<head>
-<style>
-#navlist {
-  position: relative;
-}
-
-#navlist li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  position: absolute;
-  top: 0;
-}
-
-#navlist li, #navlist a {
-  height: 44px;
-  display: block;
-}
-
-#Youtube {
-  left: 0px;
-  width: 46px;
-  background: url('C:\Users\mnikm_hqbwtkd\OneDrive\Desktop\My website\gif\sprite.png') 0 0 no-repeat;
-}
-
-</style>
-</head>
-<body>
-
 
 <head>
     <style>
-    body {background-color: powderblue;}
-    h1   {color: blue;}
-    p    {color: darkmagenta;}
-    </style> <!-- background colour, text,  -->
-
-</head>
-
-<head>
-    <style>
+      
+  #grad1{
+  background-image: linear-gradient(to top, #E5F9E0, #A3F7B5, #40C9A2, #2F9C95);
+  background-color: #E5F9E0  ; /* For browsers that do not support gradients */
+      }
+  
     h1 {
       color: blue;
       font-family: verdana;
@@ -101,26 +82,9 @@
     p {
       font-family: courier;
       font-size: 160%;
+      color: rgb(0, 0, 0);
+      padding-left: 70px;
     }
-    
-    main { 
-    max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-    } 
-    
-    menu {
-    max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-    } /* buttons to other pages in this case */
-    
-    /* Footer */
-footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
 
     </style>
     </head>
@@ -132,6 +96,24 @@ footer {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head1>
 
+<div id="grad1"></div>
+
+<!-- Header -->
+<header>
+  <h4>Maria-Nikolette Muraru</h4>
+</header>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="index.html">Main Page</a>
+  <a href="MyFiction.html">My Fiction</a>
+   <a href="MyMusic.html">My Music</a>
+  <a href="MySculptures.html">My Sculptures</a>
+  <a href="MyPoetry.html">My Poetry</a>
+  <a href="MyPaintings.html">My Paintings</a>
+  <a href="MyVideography.html">My Films</a>
+  <a href="MyAboutMe.html">About Me</a>
+</div>
 
 <body style="background-image:antiquewhite;">
     <div class="image-container">
@@ -139,36 +121,23 @@ footer {
     alt="banner" width="500" height="400">
     </div>
     
-    <menu>
-        <h1 style="color:darkgreen;">Welcome to My Webpage &#128521; </h1> 
-    <div id= "nav">
-      
-        <button class="button" onclick ="document.location='MyPaintings.html'">My Paintings</button>
-        <button class="button" onclick="document.location='MyPoetry.html'">My Poetry</button>
-        <button class="button" onclick="document.location='MyFiction.html'">My Fiction</button>
-        <button class="button" onclick="document.location='MySculptures.html'">My Scultpures</button>
-        <button class="button" onclick="document.location='MyMusic.html'">My Music</button>
-        <button class="button" onclick="document.location='MyVideography.html'">My Films</button>
-        <button class="button" onclick="document.location='MyAboutMe.html'">ABOUT ME</button>
-        
-    </nav>
-</menu>
     
+    <p style="font-size:25px;">My name is <strong>Mars</strong> and these are my <i>works!</i> </p> 
 
-    <main> 
-    <p><a href="mailto:marianikolettemuraru@gmail.com">marianikolettemuraru@gmail.com</a></p>
-    <p style="font-size:25px;">My name is <strong>Mars</strong> and these are my <i>works!</i> </p>
-    
-    
+
+    <p>Contact Me: <a href="mailto:marianikolettemuraru@gmail.com">marianikolettemuraru@gmail.com</a></p>
+
+
+    <p>Follow me on: </p>
+
     <a href="https://www.youtube.com/@mars_for_the_stars"> 
-      <img src="gif/youtube-logo-gif-3.gif" alt="Youtube"width="100">
+      <img src="gif/youtube-logo-gif-3.gif" alt="Youtube" style="width: 100px; padding-left: 50px;">
     </a>
 
     <a href="https://the-noble-devil.itch.io/"> 
-      <img src="gif/a72437afb97803a6acb5420ef8b8a90f.png" alt="itch.io" width="100">
+      <img src="gif/a72437afb97803a6acb5420ef8b8a90f.png" alt="itch.io" style="width: 100px; padding: 10px;">
     </a>
 
-    </main>
 
     <footer>
     <p>Maria-Nikolette Muraru &copy; 2026</p>
