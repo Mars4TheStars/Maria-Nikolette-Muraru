@@ -1,6 +1,16 @@
 <html>
 <head>
     <style>
+
+/* Header */
+header {
+  padding: 10px;
+  text-align: center;
+  background: #00233e;
+  color: white;
+  
+}
+
 /* Top navigation bar */
 .navbar {
   display: flex;
@@ -27,8 +37,56 @@ footer {
   text-align: center;
   background: #ddd;
 }
+
+/* sticky table of contents */
+   .tableOfcontents {
+  position: sticky;
+  padding: 5px;
+ background-color: rgba(255, 255, 255, 0.6); /* semi transparent colour */
+   }
+
+
+   .dropdown-content {
+  display: none; /* lets it be hidden by default aka hoverable */
+  position: relative;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 30px;
+  padding-right: 100px;
+}
+
+.tableOfcontents:hover .dropdown-content {
+  display: block;
+}
+
 </style>
 </head> 
+
+<head> <!-- THESE ALL ARE HASHTAGS KIND OF GLOBAL VARIABLES  -->
+    <style>
+    body {background-color: #3E78B2;}
+    h4{ color: rgb(255, 255, 255);
+        padding: 5px;
+        font-size: 20px;
+        text-align: center;}
+    h1   {color: rgb(0, 0, 0);
+          padding: 60px;
+          background-color: #004BA8;
+          text-align:center;}
+    p    {color: rgb(0, 0, 0);}
+    h2 {background-color: #4A525A;
+        color: black;
+        padding: 40px;
+        text-align: center;}
+    </style> 
+</head>
+
+<!-- Header -->
+<header>
+  <h4>Maria-Nikolette Muraru</h4>
+</header>
 
 <!-- Navigation Bar -->
 <div class="navbar">
@@ -41,29 +99,19 @@ footer {
   <a href="MyAboutMe.html">About Me</a>
 </div>
 
-<head> <!-- THESE ALL ARE HASHTAGS KIND OF GLOBAL VARIABLES  -->
-    <style>
-    body {background-color: powderblue;}
-    h1   {color: rgb(0, 0, 0);
-          padding: 60px;
-          background-color: aquamarine;
-          text-align:center;}
-    p    {color: rgb(0, 0, 0);}
-    h2 {background-color: antiquewhite;
-        color: black;
-        padding: 40px;
-        text-align: center;}
-    </style> 
 
-</head>
-<p>Table of Contents</p>
-<ol style="list-style-type:upper-roman">
+
+
+<div class=" sticky tableOfcontents"> <!-- sticky table of contents -->
+<p>Table of Contents</p> 
+<ol style="list-style-type:upper-roman"> 
+<div class="dropdown-content"> <!-- dropdown menu -->
 <li><a href="#Y2023">Jump to Year 2023</a></li>
 <li><a href="#Y2024">Jump to Year 2024</a></li>
-<li><a href="#Y2025">Jumpt to Year 2025</a></li>
+<li><a href="#Y2025">Jump to Year 2025</a></li>
 
 </ol>
-
+</div> 
 
 <body>
   
