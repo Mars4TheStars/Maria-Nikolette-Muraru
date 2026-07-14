@@ -1,23 +1,19 @@
 <html>
 <head>
-<title>Page Title</title>
-<meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Courier New', Courier, monospace;
-  margin: 0;
-}
-
 /* Header */
 header {
-  padding: 25px;
+  padding: 10px;
   text-align: center;
-  background: #003e1e;
+  background: #00963a;
   color: white;
   
 }
@@ -25,12 +21,13 @@ header {
 /* Top navigation bar */
 .navbar {
   display: flex;
-  background-color: #a0eaff;
+  background-color: rgb(0, 81, 43);
 }
 
 /* Navigation bar links */
 .navbar a {
-  color: rgb(0, 81, 43);
+  background-color: rgb(0, 81, 43);
+  color: #00963a;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -38,8 +35,8 @@ header {
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #00963a;
+  color: rgb(255, 255, 255);
 }
 
 /* Column container */
@@ -55,7 +52,7 @@ header {
   padding: 20px;
 }
 
-/* Main column  = not used on this page but here is reference: https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_website*/
+/*Main column */
 .main {
   flex: 70%;
   background-color: rgb(167, 229, 255);
@@ -65,21 +62,43 @@ header {
 /* Footer */
 footer {
   padding: 20px;
+  
   text-align: center;
-  background: #d13aff;
+  background: #00963a;
+  color: white;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-  .container, .navbar {   
+  .container, .navbar, .side, .main, footer {   
     flex-direction: column;
   }
 }
+
+.image-container {
+  width: 250px;
+  height: 300px;
+  border: 1px transparent black;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 80%;  
+}
+
+  
+
+
 </style>
 </head>
 <body>
 
-    
+<!-- Header -->
+<header>
+  <h1>About Me</h1>
+</header>    
 
 <!-- Navigation Bar -->
 <div class="navbar">
@@ -88,32 +107,40 @@ footer {
   <a href="MyMusic.html">My Music</a>
   <a href="MySculptures.html">My sculpture</a>
   <a href="MyPoetry.html">My Poetry</a>
-  <a href="MyVideography.html">My Films</a>
   <a href="MyPaintings.html">My Paintings</a>
+  <a href="MyVideography.html">My Films</a>
+  <a href="MyAboutMe.html">About Me</a>
 </div>
 
-<!-- Header -->
-<header>
-  <h1>About Maria-Nikolette Muraru</h1>
-</header>
 
-<!-- Content Container -->
+
+<!-- Content Container --> 
 <div class="container">
+  
   <div class="side">
-   
+
+    <h2>Photo of me:</h2>
     
-
-    <img src="Images/PhotoOfMe.jpg" alt="Evil fungi"
-width="200" height="200"> <!-- main image  -->
-<h5>Hi, nice to see you, this is me!</h5>
-
-   <h3>Short Description</h3>
-
-    <p>Currently a Toronto Metropolitan University Student in the New Media Program.
-      Digging into the world of digital media, exploring the realms of creativity and technology. Passionate about storytelling, design, and innovation. 
-      Always eager to learn and grow in this dynamic field.</p>
-    </p>
-   
-    <p>There is more where this came from! Just wait and see!</p>
-   
+    <div class="image-container">
+      <img src="Images/PhotoOfMe.jpg" alt="Photo of me">
+    </div> <!-- main image  -->
   </div>
+  
+  <div class="main">
+    <img src="Images/channels4_profile.jpg" width="100" height="100">
+    <br> 
+    <p>Hi, my name is Maria-Nikolette Muraru. I am a student at Toronto Metropolitan University, currently pursuing a degree in the New Media Program. I have a passion for exploring the world of digital media, where creativity and technology intersect. My interests include storytelling, design, and innovation, and I am always eager to learn and grow in this dynamic field.</p>
+    <p>In my free time, I enjoy engaging in various creative projects, including writing fiction, composing music, sculpting, painting, and creating films. I believe that art is a powerful medium for self-expression and communication, and I strive to convey meaningful messages through my work.</p>
+    <p>Thank you for visiting my website! I hope you enjoy exploring my creations and learning more about me.</p>
+ 
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer>
+    <p>Maria-Nikolette Muraru &copy; 2026</p>
+    </footer> 
+
+    </body>
+</html>

@@ -4,15 +4,26 @@
 <head>
     <style>
 
+/* Header */
+header {
+  padding: 10px;
+  text-align: center;
+  background: #B8BAC8;
+  color: #B2FFD6;
+  
+}
+
 /* Top navigation bar */
 .navbar {
   display: flex;
-  background-color: #a0eaff;
+  background-color: #B2FFD6;
+  color: #B8BAC8;
 }
 
 /* Navigation bar links */
 .navbar a {
-  color: rgb(0, 81, 43);
+  background-color: #B2FFD6;
+  color: #AA78A6;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -20,30 +31,57 @@
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #B8BAC8;
+  color: #B2FFD6;
 }
 
 /* Footer */
 footer {
   padding: 20px;
+  margin-top: 20px;
   text-align: center;
-  background: #ddd;
+  background: #B8BAC8;
 }
 
-    body {background-color: rgb(196, 255, 19);}
-    h1   {color: blue;}
-    p    {color: darkmagenta;}
-    </style> <!-- background colour, text,  -->
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .container, .navbar {   
+    flex-direction: column;
+  }
+}
+
+    body {background-color: #D7FDF0}
+    /* page category */
+    h1   {background-color: #B2FFD6;
+          color: #AA78A6;
+          padding: 60px;
+          text-align:center;}
+    p    {color: #AA78A6;}
+    /* divide of works / title of works */
+    h3 {background-color: #B4D6D3;
+        color: #B2FFD6;
+         padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        }
+
+    h4{color: #B2FFD6;
+        text-align: center;}
+    </style> 
 
 
 </head>
 <body>
+<!-- Header -->
+<header>
+  <h4>Maria-Nikolette Muraru</h4>
+</header>
 
     <!-- Navigation Bar -->
 <div class="navbar">
   <a href="index.html">Main Page</a>
   <a href="MyFiction.html">My Fiction</a>
+  <a href="MySculptures.html">My Sculptures</a>
   <a href="MyMusic.html">My Music</a>
   <a href="MyPoetry.html">My Poetry</a>
   <a href="MyPaintings.html">My Paintings</a>
@@ -53,11 +91,24 @@ footer {
 </div>
 
 
+
+<h1>My Sculptures</h1>
+
+<h3>  Everything is in your hand(s) - project video  </h3>
+
 <iframe width="420" height="345" src="https://youtu.be/zCt66h--7QA?si=f_pyN9OYR9RVh4rx">
 </iframe>
 
+<h3>  The battle of heart and brain  </h3>
+
 <iframe width="420" height="345" src="https://youtu.be/LLvqzwLlchw?si=Jaoo2AD8TLG9PO_1"> <!-- The battle of heart and brain / bear in fornt of tv-->
 </iframe>
+
+
+<!-- Footer -->
+<footer>
+    <h4>Maria-Nikolette Muraru &copy; 2026</h4>
+    </footer>
 
 
 </body>

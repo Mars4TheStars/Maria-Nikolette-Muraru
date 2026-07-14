@@ -8,20 +8,21 @@
 header {
   padding: 10px;
   text-align: center;
-  background: #0BC9CD;
-  color: white;
+  background: #96897B;
+  color: #D0CE7C;
   
 }
 
 /* Top navigation bar */
 .navbar {
   display: flex;
-  background-color: #a0eaff;
+  background-color: #628395 ;
 }
 
 /* Navigation bar links */
 .navbar a {
-  color: rgb(0, 81, 43);
+  background-color: #628395;
+  color: #D0CE7C;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -29,31 +30,46 @@ header {
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #96897B ;
+  color: #D0CE7C;
 }
 
 /* Footer */
 footer {
   padding: 20px;
+  margin-top: 20px;
   text-align: center;
-  background: #ddd;
+  background: #96897B;
+  color:#D0CE7C;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .container, .navbar {   
+    flex-direction: column;
+  }
 }
 
 
-
-    body {background-color: #CEEC97;}
-    h1   {color: rgb(0, 0, 0);
+    body {background-color:  #D0CE7C}
+    /* page category */
+    h1   {color: #CF995F;
           padding: 60px;
-          background-color: #494368;
+          background-color: #628395;
           text-align:center;}
     p    {color: rgb(0, 0, 0);}
-    h2 {background-color: #F4B393;
-        color: black;
-        padding: 40px;
-        text-align: center;}
+    /* divide of works / title of works */
+    h2 {background-color: #DBAD6A;
+        color: #628395;
+        padding: 20px;
+        }
+    h3{ color: black;
+        padding: 20px;
+        }
+    
     </style> 
 
+<body>
 
 <!-- Header -->
 <header>
@@ -64,39 +80,56 @@ footer {
 <div class="navbar">
   <a href="index.html">Main Page</a>
   <a href="MyFiction.html">My Fiction</a>
+  <a href="MySculptures.html">My Sculptures</a>
   <a href="MyMusic.html">My Music</a>
   <a href="MyPoetry.html">My Poetry</a>
   <a href="MyPaintings.html">My Paintings</a>
+  <a href="MyVideography.html">My Films</a>
   <a href="MyAboutMe.html">About Me</a>
 
 </div>
 
+<h1>My Films</h1>
+
+<p>Table of Contents</p>
+<ol style="list-style-type:upper-roman">
+<li><a href="#Silent Film">Silent Film</a></li>
+<li><a href="#Union Station Documentary">Union Station Documentary</a></li>
+<li><a href="#Animation in After Effects based on the book Crimson Shard">Animation in After Effects based on the book Crimson Shard</a></li>
+<li><a href="#Exploration of Editing my skiing with GoPro">Exploration of Editing my skiing with GoPro</a></li>
+<li><a href="#Stopmotion exploration">Stopmotion exploration</a></li>
+</ol>
+
+
+<h2>Silent Film</h2>
+<div id="Silent Film"></div> <!-- div#Silent Film to get it  -->
 <iframe width="420" height="345" src="https://youtu.be/OhivnwXcQPk?si=NHU_xjGrGG3Z5zQK"> <!-- silent film-->
 </iframe>
 
+<h2>Union Station Documentary</h2>
+<div id="Union Station Documentary"></div> <!-- div#Union Station Documentary to get it  -->
 <iframe width="420" height="345" src="https://youtu.be/j1pjeU2EHnE?si=LgU5jBvEens2-7pf"> <!--union station-->
 </iframe>
 
+<h2>Animation in After Effects based on the book Crimson Shard</h2>
+<div id="Animation in After Effects based on the book Crimson Shard"></div> <!-- div#Animation in After Effects based on the book Crimson Shard to get it  -->
 <iframe width="420" height="345" src="https://youtu.be/tJVMLNMgyCA?si=IhRnmp0ChWbU1ftU"> <!-- crimson shard-->
 </iframe>
 
+<h2>Exploration of Editing my skiing with GoPro</h2>
+<div id="Exploration of Editing my skiing with GoPro"></div> <!-- div#Exploration of Editing my skiing with GoPro to get it  -->
 <iframe width="420" height="345" src="https://youtu.be/a9NKIPC6MBI?si=uJwT4n6hQkSmwmq6"> <!-- skiing-->
 </iframe>
 
+<h2>Stopmotion exploration</h2>
+<div id="Stopmotion exploration"></div> <!-- div#Stopmotion exploration to get it  -->
 <iframe width="420" height="345" src="https://youtu.be/XC9kJY7baE8?si=gfuBjYfZggvje-kz"> <!-- word of the world stopmotion-->
-
-
-
-
-
-
-
-
+</iframe>
 
 <!-- Footer -->
 <footer>
-    <p>Maria-Nikolette Muraru &copy; 2026</p>
-    </footer>
+    <h4>Maria-Nikolette Muraru &copy; 2026</h4>
+</footer>
 
-
+</body>
 </html>

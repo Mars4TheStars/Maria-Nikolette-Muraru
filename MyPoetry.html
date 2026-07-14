@@ -1,17 +1,25 @@
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
+  
     <style>
 
+/*header*/
+    header
+    { background-color: #91785D;
+      color: #A7CDBD;
+      padding: 10px;
+      text-align: center;}
 
 /* Top navigation bar */
 .navbar {
   display: flex;
-  background-color: #a0eaff;
+  background-color: #A7CDBD;
 }
 
 /* Navigation bar links */
 .navbar a {
-  color: rgb(0, 81, 43);
+  color: #8B5D33;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -19,27 +27,46 @@
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #91785D;
+  color: #A7CDBD;
 }
 
 
 /* Footer */
 footer {
   padding: 20px;
+  margin-top: 20px;
   text-align: center;
-  background: #ddd;
+  background: #91785D;
+  color: #A7CDBD;
 }
 
-    body {background-color: rgb(181, 255, 142);}
-    h1   {color: rgb(8, 0, 255);
-            font-family: verdana;
-            font-size: 300%;
-            padding: 60px;}
-    p    {color: rgb(0, 0, 0);}
-    h3 {color:rgb(23, 139, 0);
-    padding-top: 20px;
-  padding-bottom: 20px;} 
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .container, .navbar {   
+    flex-direction: column;
+  }
+}
+
+    body {background-color: #BBE1C3}
+
+    /* page category */
+    h1   {color: #8B5D33;
+          background-color: #869D7A;
+          padding: 60px;
+          text-align: center;
+        }
+
+    p    {color: black;
+          }
+
+/* divide of works / title of works */
+    h3 {background-color: #A7CDBD;
+        color: #869D7A;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;} 
+
 
 aside {
   width: 30%;
@@ -63,13 +90,18 @@ aside {
 </style>
 </head>
 
+<!-- Header -->
+<header>
+  <h4>Maria-Nikolette Muraru</h4>
+</header>
 
  
 <div class="navbar">
   <a href="index.html">Main Page</a>
   <a href="MyFiction.html">My Fiction</a>
-  <a href="MyMusic.html">My Music</a>
   <a href="MySculptures.html">My sculpture</a>
+  <a href="MyMusic.html">My Music</a>
+  <a href="MyPoetry.html">My Poetry</a>
   <a href="MyPaintings.html">My Paintings</a>
   <a href="MyVideography.html">My Films</a>
   <a href="MyAboutMe.html">About Me</a>
@@ -77,6 +109,12 @@ aside {
 
 <h1> My Poetry </h1>
 
+<p>Table of Contents</p>
+<ol style="list-style-type:upper-roman">
+<li><a href="#Blackout Poem">A Blackout Poem</a></li>
+<li><a href="#Space">Space</a></li>
+<li><a href="#Liar">A liar</a></li>
+</ol>
 
 <body>
 
@@ -99,15 +137,22 @@ aside {
 
 
 
-<h3>Poem 1</h3>
-<img src="Images/" alt="Poem about the loss of childhood"
+<h3>Space</h3>
+<div id="Space"></div> <!-- div#Space to get it  -->
+<img src="Images/Space.png" alt="Poem about space"
 width="100" height="100">
 
-<h3>Poem 2</h3>
-<p>Mnice, and Epcotether with my family!</p>
+<h3>A liar</h3>
+<div id="Liar"></div> <!-- div#Liar to get it  -->
+<img src="Images/An Oligarch-what a lie.png" alt="Poem about a liar"
+width="100" height="100">
 
-<h3>Poem 3</h3>
-<p>My famir waer with my family!</p>
+
+
+<!-- Footer -->
+<footer>
+    <h4>Maria-Nikolette Muraru &copy; 2026</h4>
+</footer>
 
 </body>
 </html>

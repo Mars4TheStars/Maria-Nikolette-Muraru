@@ -1,6 +1,10 @@
 <!DOCTYPE html> 
 <html lang="en">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Portfolio works" content="marianikolettemuraru, mars_for_the_stars, Mars"> 
+<meta name="The different works of Maria-Nikolette Muraru" content="we showcase the Portfolio">
+    
 
 <head>
 <style>
@@ -8,7 +12,7 @@
 header {
   padding: 10px;
   text-align: center;
-  background: #0BC9CD;
+  background: #2F9C95;
   color: white;
 }
 
@@ -16,12 +20,12 @@ header {
 /* Top navigation bar */
 .navbar {
   display: flex;
-  background-color: #a0eaff;
+  background-color: #40C9A2;
 }
 
 /* Navigation bar links */
 .navbar a {
-  color: rgb(0, 81, 43);
+  color: #E5F9E0;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -29,15 +33,22 @@ header {
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #2F9C95;
+  color: #A3F7B5;
 }
 
 /* Footer */
 footer {
   padding: 20px;
-  text-align: center;
-  background: #664147;
+   text-align: center;
+  background: #E5F9E0;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .container, .navbar {   
+    flex-direction: column;
+  }
 }
 
 </style>
@@ -68,6 +79,8 @@ footer {
   #grad1{
   background-image: linear-gradient(to top, #E5F9E0, #A3F7B5, #40C9A2, #2F9C95);
   background-color: #E5F9E0  ; /* For browsers that do not support gradients */
+  min-height: 100vh;          /* Forces the element to take up the full screen height */
+  background-attachment: fixed; /* Prevents the gradient from repeating if the page scrolls */
       }
   
     h1 {
@@ -83,20 +96,15 @@ footer {
       font-family: courier;
       font-size: 160%;
       color: rgb(0, 0, 0);
-      padding-left: 70px;
+      padding: 20px;
     }
 
     </style>
     </head>
 
- 
-<head1> 
-    <meta name="Portfolio works" content="marianikolettemuraru, mars_for_the_stars, Mars"> 
-    <meta name="The different works of Maria-Nikolette Muraru" content="we showcase the Portfolio">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head1>
 
-<div id="grad1"></div>
+
+<div id="grad1">
 
 <!-- Header -->
 <header>
@@ -107,7 +115,7 @@ footer {
 <div class="navbar">
   <a href="index.html">Main Page</a>
   <a href="MyFiction.html">My Fiction</a>
-   <a href="MyMusic.html">My Music</a>
+  <a href="MyMusic.html">My Music</a>
   <a href="MySculptures.html">My Sculptures</a>
   <a href="MyPoetry.html">My Poetry</a>
   <a href="MyPaintings.html">My Paintings</a>
@@ -122,28 +130,30 @@ footer {
     </div>
     
     
-    <p style="font-size:25px;">My name is <strong>Mars</strong> and these are my <i>works!</i> </p> 
+    <p style="font-size:25px;">Hello, my name is <strong>Maria-Nikolette Muraru</strong> take a look at my <i>Portfolio</i>!</p> 
 
 
-    <p>Contact Me: <a href="mailto:marianikolettemuraru@gmail.com">marianikolettemuraru@gmail.com</a></p>
+    <p> <u> Contact Me:</u> <a href="mailto:marianikolettemuraru@gmail.com">marianikolettemuraru@gmail.com</a></p>
 
 
-    <p>Follow me on: </p>
+    <p> <u> Follow me on: </u></p>
 
     <a href="https://www.youtube.com/@mars_for_the_stars"> 
-      <img src="gif/youtube-logo-gif-3.gif" alt="Youtube" style="width: 100px; padding-left: 50px;">
+      <img src="gif/youtube-logo-gif-3.gif" alt="Youtube" style="width: 100px; padding-left: 100px;">
     </a>
+
+  
 
     <a href="https://the-noble-devil.itch.io/"> 
-      <img src="gif/a72437afb97803a6acb5420ef8b8a90f.png" alt="itch.io" style="width: 100px; padding: 10px;">
+      <img src="gif/a72437afb97803a6acb5420ef8b8a90f.png" alt="itch.io" style="width: 100px; padding-left: 100px;">
     </a>
 
-
+  </div> 
     <footer>
     <p>Maria-Nikolette Muraru &copy; 2026</p>
     </footer>
     
-    
+   
 </body>
 </html> 
 

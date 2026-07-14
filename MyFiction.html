@@ -6,15 +6,23 @@
   <head>
     <style>
 
+/* Header */
+header {
+  padding: 10px;
+  text-align: center;
+  background: #A7A284;
+  color: #433E0E ;
+}
+
 /* Top navigation bar */
 .navbar {
   display: flex;
-  background-color: #a0eaff;
+  background-color: #D0C88E;
 }
 
 /* Navigation bar links */
 .navbar a {
-  color: rgb(0, 81, 43);
+  color: #433E0E; /* text color */
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -22,27 +30,47 @@
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #A7A284;
+  color: #433E0E; /* text color */
 }
 
 /* Footer */
 footer {
   padding: 20px;
+  margin-top: 20px;
   text-align: center;
-  background: #ddd;
+  background: #A7A284;
 }
 
 
-    body {background-color: rgb(176, 230, 205);}
-    h1   {color: rgb(8, 0, 255);
-            font-family: verdana;
-            font-size: 300%;
-            padding: 60px;}
-    p    {color: rgb(0, 0, 0) ;}
-    h3 {color:rgb(255, 132, 0);
-    padding-top: 20px;
-  padding-bottom: 20px;}
+    body {background-color:#EDEEC0;}
+
+    /* page category */
+    h1   {color: #433E0E;
+            text-align: center;
+            padding: 60px;
+          background-color: #7C9082;} 
+
+    p    {font-size: 18px;
+          color: #433E0E ;
+           font-weight: bold;}
+
+    /* divide of works / title of works */
+    h3 {color: #7C9082;
+        background-color: #D0C88E;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      padding-left: 20px;}
+
+    sub{font-size: 18px;
+        color: #433E0E;}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .container, .navbar {   
+    flex-direction: column;
+  }
+}
 
 </style>
 
@@ -56,8 +84,9 @@ footer {
 <!-- Navigation Bar -->
 <div class="navbar">
   <a href="index.html">Main Page</a>
-  <a href="MyMusic.html">My Music</a>
+  <a href="MyFiction.html">My Fiction</a>
   <a href="MySculptures.html">My Sculptures</a>
+  <a href="MyMusic.html">My Music</a>
   <a href="MyPoetry.html">My Poetry</a>
   <a href="MyPaintings.html">My Paintings</a>
   <a href="MyVideography.html">My Films</a>
@@ -66,10 +95,12 @@ footer {
 
 <h1> My Fiction </h1>
 
-<h3>Table of Contents</h3>
+<p>Table of Contents</p>
 <ol style="list-style-type:upper-roman">
 <li><a href="#I Learned, In Leafy Woods.">I Learned, In Leafy Woods.</a></li>
-
+<li><a href="#Blue Hugh">Blue Hugh</a></li>
+<li><a href="#Gem of Radimira - short scripted scene">RTA-923 - ASSIGNMENT 1: YOUR SHORT, SCRIPTED SCENE - LINEAR DIALOGUE - Yaga (NPC) and Radimira (player)</a></li>
+<li><a href="#Proposal for the Gem of Radimira (Final Portfolio Project)">Proposal for the Gem of Radimira (Final Portfolio Project)</a></li>
 </ol>
 
 
@@ -78,12 +109,42 @@ footer {
 
 <h3>I Learned, In Leafy Woods.</h3><!-- short story one  -->
 <div id="I Learned, In Leafy Woods."></div> <!-- div#I Learned, In Leafy Woods. to get it  -->
-
 <a href="https://docs.google.com/document/d/1Eo1uVCM3UpPdllLXREGPFo5tKid7dUeC/edit?usp=sharing&ouid=114216392306794388401&rtpof=true&sd=true"> 
       <img src="gif/book-flipping.gif" width="100">
     </a>
     <p> Description: </p>
 <sub> A short story about a person that works in a forest. (the book is a button) </sub>
+
+<h3>Blue Hugh by Josh Volfson, Tim Comia, Bella Abal, Maria-Nikolette Muraru </h3><!-- short story one  -->
+<div id="Blue Hugh"></div> <!-- div#Blue Hugh to get it  -->
+<a href="https://drive.google.com/file/d/1LvakMAfHcRP_bSVGRUM8XJaZMLviA-nm/view?usp=sharing"> 
+      <img src="gif/book-flipping.gif" width="100">
+    </a>
+    <p> Description: </p>
+<sub> A script about a boy with blue eyes and magic (the book is a button) </sub>
+
+<h3>RTA-923 - ASSIGNMENT 1: YOUR SHORT, SCRIPTED SCENE - LINEAR DIALOGUE - Yaga (NPC) and Radimira (player) </h3><!-- short story one  -->
+<div id="Gem of Radimira - short scripted scene"></div> <!-- div#Blue Hugh to get it  -->
+<a href="https://drive.google.com/file/d/1hA04q7kx8CO6EgBwSS2YfTC4KQl1NpdU/view?usp=sharing"> 
+      <img src="gif/book-flipping.gif" width="100">
+    </a>
+    <p> Description: </p>
+<sub> A script about a boy with blue eyes and magic (the book is a button) </sub>
+
+<h3>Proposal for the Gem of Radimira (Final Portfolio Project)</h3><!-- short story one  -->
+<div id="Proposal for the Gem of Radimira (Final Portfolio Project)"></div> <!-- div#Proposal for the Gem of Radimira (Final Portfolio Project) to get it  -->
+<a href="https://docs.google.com/document/d/1suJtQKpxtGL5guCg-hZl7uzDdxbHvsFv/edit?usp=sharing&ouid=114216392306794388401&rtpof=true&sd=true"> 
+      <img src="gif/book-flipping.gif" width="100">
+    </a>
+    <p> Description:</p>
+    <sub> Includes the game concept, one lore entry, bark sheet, one quest outline, a narrative mechanic, and another sample script (the book is a button) </sub>
+    <p> Game concept: </p>
+    <sub> In this game, you, Radimira, are in a party of 3 that includes 2 NPCs, Koshei the Immortal and Baba Yaga.
+The story is not set in a world we know, but the Slavic pagan religion is the same as in our reality (though ours was heavily repressed, so the author is taking creative liberties).
+Yaga and Koshei have known each other for longer than they have known you, a human who has gained magic after Rojenica, a deity of fate, intervened in your death. By crossing into the territory of Veles, the god of Nav (underworld) and a being associated with magical knowledge, sorcery, and the mystical realm, Rojenica butchered your resurrection and essentially created a spirit/child of Veles. Being driven out of your village due to fear, Koshei and Yaga took you in after Yaga found you wandering in a forest. You are now aimlessly travelling the world together, having adventures.
+After 10 years of those travels, they stumble upon the knowledge of a magic gem that can grant wishes. All of the three characters have something they wish for, so they keep travelling, trying to find it.
+</sub>
+
 
 
 <!-- Footer -->
