@@ -35,6 +35,51 @@ header {
   color: #B2FFD6;
 }
 
+
+
+
+
+/* THE PARENT CONTAINER */
+.social-container {
+  display: flex;            /* Activates horizontal row layout */
+  
+  flex-direction: row;      /* Locks items onto a horizontal axis line */
+  align-items: center;      /* Lines up the horizontal midpoints of both icons */
+  gap: 20px;                /* Puts clean horizontal space between them */
+}
+
+.image-button {
+      
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      gap: 20px;     /* Defines the space between the two buttons */
+      
+    }
+
+    /* Slight zoom and full brightness on hover */
+    .image-button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* Removes default blue/purple border around linked images in older browsers */
+    .image-button img {
+      border: none;
+      display: block;      
+    }
+
+    /* Sizing individual images cleanly in CSS */
+.social-container .image-button:nth-child(1) img {
+  width: 100px;             /* Target Discord width */
+}
+
+.social-container .image-button:nth-child(2) img {
+  width: 80px;              /* Target Instagram width */
+}
+
+
+
+
+
 /* Footer */
 footer {
   padding: 20px;
@@ -100,9 +145,11 @@ footer {
 <iframe width="420" height="345" src="https://youtu.be/zCt66h--7QA?si=f_pyN9OYR9RVh4rx">
 </iframe>
 
-<a href="https://youtu.be/zCt66h--7QA?si=f_pyN9OYR9RVh4rx"> 
+
+<div class="social-container">
+<a href="https://youtu.be/zCt66h--7QA?si=f_pyN9OYR9RVh4rx"class="image-button"> 
       <img src="Sprites/purplePlay.png" width="100" height="100" style="padding: 20px;">
-    </a>
+    </a></div>
 <p> if the video player isn't working press the play button</p>
 
 <h3>  The battle of heart and brain  </h3>
@@ -110,9 +157,11 @@ footer {
 <iframe width="420" height="345" src="https://youtu.be/LLvqzwLlchw?si=Jaoo2AD8TLG9PO_1"> <!-- The battle of heart and brain / bear in fornt of tv-->
 </iframe>
 
-<a href="https://youtu.be/LLvqzwLlchw?si=Jaoo2AD8TLG9PO_1"> 
+
+<div class="social-container">
+<a href="https://youtu.be/LLvqzwLlchw?si=Jaoo2AD8TLG9PO_1"class="image-button"> 
       <img src="Sprites/purplePlay.png" width="100" height="100" style="padding: 20px;">
-    </a>
+    </a></div>
 <p> if the video player isn't working press the play button</p>
 
 <!-- Footer -->

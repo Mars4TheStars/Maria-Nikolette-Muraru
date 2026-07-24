@@ -1,13 +1,17 @@
 <!DOCTYPE html> 
 <html lang="en">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Portfolio works" content="marianikolettemuraru, mars_for_the_stars, Mars"> 
-<meta name="The different works of Maria-Nikolette Muraru" content="we showcase the Portfolio">
-    
+<meta name="keywords" content="Maria-Nikolette Muraru, Portfolio, Art, Music, Poetry, Sculptures">
+<meta name="description" content="Portfolio showcasing the creative works of Maria-Nikolette Muraru.">
+<meta name="viewport" content="width=device-width, initial-scale=1">    
 
 <head>
 <style>
+* {
+  box-sizing: border-box;
+}
+
+
 /* Header */
 header {
   padding: 10px;
@@ -37,6 +41,28 @@ header {
   color: #A3F7B5;
 }
 
+
+/* Column container */
+.container {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #2F9C95;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color:  #A3F7B5 ;
+  padding: 20px;
+}
+
+
 /* Footer */
 footer {
   padding: 20px;
@@ -46,37 +72,54 @@ footer {
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-  .container, .navbar {   
+  .container, .navbar, .side, .main {   
     flex-direction: column;
   }
 }
 
-</style>
-</head>
 
 
-<head>
-<style>
-.image-container {
-  width:1000px;
-  height: 150px;
-  border: 1px solid rgb(255, 255, 255);
-  margin-bottom: 5px;
+
+
+/* THE PARENT CONTAINER */
+.social-container {
+  display: flex;            /* Activates horizontal row layout */
+  
+  flex-direction: row;      /* Locks items onto a horizontal axis line */
+  align-items: center;      /* Lines up the horizontal midpoints of both icons */
+  gap: 20px;                /* Puts clean horizontal space between them */
 }
 
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-}
-</style>
-</head>
-
-
-<head>
-    <style>
+.image-button {
       
-  #grad1{
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      gap: 20px;     /* Defines the space between the two buttons */
+      
+    }
+
+    /* Slight zoom and full brightness on hover */
+    .image-button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* Removes default blue/purple border around linked images in older browsers */
+    .image-button img {
+      border: none;
+      display: block;      
+    }
+
+    /* Sizing individual images cleanly in CSS */
+.social-container .image-button:nth-child(1) img {
+  width: 100px;             /* Target Discord width */
+}
+
+.social-container .image-button:nth-child(2) img {
+  width: 80px;              /* Target Instagram width */
+}
+
+
+#grad1{
   background-image: linear-gradient(to top, #E5F9E0, #A3F7B5, #40C9A2, #2F9C95);
   background-color: #E5F9E0  ; /* For browsers that do not support gradients */
   min-height: 100vh;          /* Forces the element to take up the full screen height */
@@ -99,62 +142,73 @@ footer {
       padding: 20px;
     }
 
-    </style>
-    </head>
 
 
 
+
+</style>
+</head>
+
+
+
+
+
+<body>
 <div id="grad1">
 
-<!-- Header -->
-<header>
-  <h4>Maria-Nikolette Muraru</h4>
-</header>
+  <!-- Header -->
+  <header>
+    <h2>Maria-Nikolette Muraru</h2>
+    <h4>Artist • Writer • Musician</h4>
+  </header>
 
-<!-- Navigation Bar -->
-<div class="navbar">
-  <a href="index.html">Main Page</a>
-  <a href="MyFiction.html">My Fiction</a>
-  <a href="MyMusic.html">My Music</a>
-  <a href="MySculptures.html">My Sculptures</a>
-  <a href="MyPoetry.html">My Poetry</a>
-  <a href="MyPaintings.html">My Paintings</a>
-  <a href="MyVideography.html">My Films</a>
-  <a href="MyAboutMe.html">About Me</a>
-</div>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="index.html">Main Page</a>
+    <a href="MyFiction.html">My Fiction</a>
+    <a href="MyMusic.html">My Music</a>
+    <a href="MySculptures.html">My Sculptures</a>
+    <a href="MyPoetry.html">My Poetry</a>
+    <a href="MyPaintings.html">My Paintings</a>
+    <a href="MyVideography.html">My Films</a>
+    <a href="MyAboutMe.html">About Me</a>
+  </div>
 
-<body style="background-image:antiquewhite;">
-    <div class="image-container">
-    <img src="Images/channels4_banner.jpg"
-    alt="banner" width="500" height="400">
+  <!-- Banner (Moved inside the body element) -->
+  <img src="Images/channels4_banner.jpg" alt="banner" width="100%" height= auto;>
+
+ 
+    
+  <!-- Content Container -->
+<div class="container">
+  
+    <div class="side">
+      <p style="font-size:25px;">Hello, my name is <strong>Maria-Nikolette Muraru</strong> take a look at my <i>Portfolio</i>!</p> 
     </div>
-    
-    
-    <p style="font-size:25px;">Hello, my name is <strong>Maria-Nikolette Muraru</strong> take a look at my <i>Portfolio</i>!</p> 
-
-
-    <p> <u> Contact Me:</u> <a href="mailto:marianikolettemuraru@gmail.com">marianikolettemuraru@gmail.com</a></p>
-
-
-    <p> <u> Follow me on: </u></p>
-
-    <a href="https://www.youtube.com/@mars_for_the_stars"> 
-      <img src="gif/youtube-logo-gif-3.gif" alt="Youtube" style="width: 100px; padding-left: 100px;">
-    </a>
 
   
+    <div class="main">
+      <p><u>Contact Me:</u> <a href="mailto:marianikolettemuraru@gmail.com">marianikolettemuraru@gmail.com</a></p>
+      <p><u>Follow me on:</u></p>
 
-    <a href="https://the-noble-devil.itch.io/"> 
-      <img src="gif/a72437afb97803a6acb5420ef8b8a90f.png" alt="itch.io" style="width: 100px; padding-left: 100px;">
-    </a>
+      <div class="social-container">
+        <a href="https://youtube.com" class="image-button"> 
+          <img src="Sprites/youtube-logo-transparent.webp" alt="Youtube"  >
+        </a>
+        <a href="https://itch.io" class="image-button"> 
+          <img src="gif/a72437afb97803a6acb5420ef8b8a90f.png" alt="itch.io"  >
+        </a>
+      </div> 
+    </div>  
+
 
   </div> 
-    <footer>
+</div>
+
+  <footer>
     <p>Maria-Nikolette Muraru &copy; 2026</p>
-    </footer>
+  </footer>
     
-   
+
 </body>
-</html> 
-
-
+</html>
