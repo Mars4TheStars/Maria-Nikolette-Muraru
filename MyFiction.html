@@ -2,10 +2,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
+<link rel="stylesheet" href="style.css">
 
   <head>
     <style>
-
 /* Header */
 header {
   padding: 10px;
@@ -68,6 +68,28 @@ footer {
        font-size: 18px;
         color: #433E0E;}
 
+.social-container {
+  display: flex;            
+  flex-direction: row;      
+  align-items: center;      
+  gap: 25px;
+  margin-top: 20px;                
+}
+
+.image-button {
+  padding: 10px;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.image-button:hover {
+  transform: translateY(-8px) scale(1.08) translateZ(30px);
+}
+
+.image-button img {
+  border: none;
+  display: block;      
+}
+
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .container, .navbar {   
@@ -76,13 +98,12 @@ footer {
 }
 
 </style>
+</head>
 
 <!-- Header -->
 <header>
   <h4>Maria-Nikolette Muraru</h4>
 </header>
-
-</head>
 
 <!-- Navigation Bar -->
 <div class="navbar">
@@ -112,33 +133,40 @@ footer {
 
 <h3>I Learned, In Leafy Woods.</h3><!-- short story one  -->
 <div id="I Learned, In Leafy Woods."></div> <!-- div#I Learned, In Leafy Woods. to get it  -->
+<div class="social-container">
 <a href="https://docs.google.com/document/d/1Eo1uVCM3UpPdllLXREGPFo5tKid7dUeC/edit?usp=sharing&ouid=114216392306794388401&rtpof=true&sd=true"> 
-      <img src="gif/book-flipping.gif" width="100" style="padding: 20px;">
-    </a>
+      <img src="gif/book-flipping.gif" width="100" style="padding: 20px;" class="image-button">
+    </a></div>
     <p> Description: </p>
 <sub> A short story about a person that works in a forest. (the book is a button) </sub>
 
+
 <h3>Blue Hugh by Josh Volfson, Tim Comia, Bella Abal, Maria-Nikolette Muraru </h3><!-- short story one  -->
 <div id="Blue Hugh"></div> <!-- div#Blue Hugh to get it  -->
-<a href="https://drive.google.com/file/d/1LvakMAfHcRP_bSVGRUM8XJaZMLviA-nm/view?usp=sharing"> 
-      <img src="gif/book-flipping.gif" width="100" style="padding: 20px;">
+<div class="social-container">
+    <a href="https://drive.google.com/file/d/1LvakMAfHcRP_bSVGRUM8XJaZMLviA-nm/view?usp=sharing"> 
+      <img src="gif/book-flipping.gif" width="100" style="padding: 20px;" class="image-button">
     </a>
+</div>
     <p> Description: </p>
 <sub> A script about a boy with blue eyes and magic (the book is a button) </sub>
 
 <h3>RTA-923 - ASSIGNMENT 1: YOUR SHORT, SCRIPTED SCENE - LINEAR DIALOGUE - Yaga (NPC) and Radimira (player) </h3><!-- short story one  -->
 <div id="Gem of Radimira - short scripted scene"></div> <!-- div#Blue Hugh to get it  -->
-<a href="https://drive.google.com/file/d/1hA04q7kx8CO6EgBwSS2YfTC4KQl1NpdU/view?usp=sharing"> 
-      <img src="gif/book-flipping.gif" width="100" style="padding: 20px;">
+<div class="social-container">
+    <a href="https://drive.google.com/file/d/1hA04q7kx8CO6EgBwSS2YfTC4KQl1NpdU/view?usp=sharing"> 
+      <img src="gif/book-flipping.gif" width="100" style="padding: 20px;" class="image-button" >
     </a>
+</div>
     <p> Description: </p>
 <sub> A script about a boy with blue eyes and magic (the book is a button) </sub>
 
 <h3>Proposal for the Gem of Radimira (Final Portfolio Project)</h3><!-- short story one  -->
 <div id="Proposal for the Gem of Radimira (Final Portfolio Project)"></div> <!-- div#Proposal for the Gem of Radimira (Final Portfolio Project) to get it  -->
+<div class="social-container">
 <a href="https://docs.google.com/document/d/1suJtQKpxtGL5guCg-hZl7uzDdxbHvsFv/edit?usp=sharing&ouid=114216392306794388401&rtpof=true&sd=true"> 
-      <img src="gif/book-flipping.gif" width="100" style="padding: 20px;">
-    </a>
+      <img src="gif/book-flipping.gif" width="100" style="padding: 20px;" class="image-button">
+    </a></div>
     <p> Description:</p>
     <sub> Includes the game concept, one lore entry, bark sheet, one quest outline, a narrative mechanic, and another sample script (the book is a button) </sub>
     <p> Game concept: </p>
@@ -156,4 +184,60 @@ After 10 years of those travels, they stumble upon the knowledge of a magic gem 
     </footer>
 
 </body>
+
+<body>
+
+  <!-- Custom Cursor Graphic Elements -->
+  <div id="custom-cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- JavaScript Interaction Logic Controller -->
+  <script>
+    const cursorDot = document.getElementById('custom-cursor');
+    const cursorFollower = document.getElementById('cursor-follower');
+
+    // 1. Core Position Tracking
+    window.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      // Bind basic dot instantly to client coordinate points
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
+
+      // Follower trails slightly behind automatically via CSS easing values
+      cursorFollower.style.left = `${mouseX}px`;
+      cursorFollower.style.top = `${mouseY}px`;
+    });
+
+    // 2. Interactive Hover States (Selects links, buttons, and your spikeball wrapper)
+    const interactiveElements = document.querySelectorAll('a, button, .image-button, .side-wrapper, .navbar a');
+    
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        document.body.classList.add('cursor-hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        document.body.classList.remove('cursor-hover');
+      });
+    });
+
+    // 3. Click Ripple Wave Generation Physics
+    window.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      ripple.className = 'cursor-click-ripple';
+      ripple.style.left = `${e.clientX}px`;
+      ripple.style.top = `${e.clientY}px`;
+      
+      document.body.appendChild(ripple);
+
+      // Clean up the node immediately after the animation completes
+      setTimeout(() => {
+        ripple.remove();
+      }, 400);
+    });
+  </script>
+
+</body>
+
 </html>

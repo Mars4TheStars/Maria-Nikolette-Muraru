@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+
 <html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
 <head>
     <style>
 
@@ -8,7 +11,7 @@
 header {
   padding: 10px;
   text-align: center;
-  background: #0BC9CD;
+  background: #006870;
   color: white;
   
 }
@@ -17,12 +20,12 @@ header {
 .navbar {
   display: flex;
   background-color: #14FFF7;
-  color:#6397bc;
+  color:#213E53;
 }
 
 /* Navigation bar links */
 .navbar a {
-  color: #0BC9CD;
+  color: #213E53;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -30,7 +33,7 @@ header {
 
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #0BC9CD;
+  background-color: #006870;
   color: white;
 }
 
@@ -39,7 +42,7 @@ footer {
   padding: 20px;
   margin-top: 20px;
   text-align: center;
-  background: #0BC9CD;
+  background: #006870;
   color: white;
 }
 
@@ -55,15 +58,15 @@ footer {
     
     body {background-color: #a0eaff;} 
     /* page category */
-    h1   {color: #6397bc;
+    h1   {color: #213E53;
           padding: 60px;
           background-color: #14FFF7; 
           text-align:center;}
     p    {padding-left: 20px;
           font-size: 18px;
-          color: black;}
+          color: #002226;}
     /* divide of works / title of works */
-    h3 {background-color: #6397bc;
+    h3 {background-color: #213E53;
         color: #14FFF7;
         padding: 20px;
         }
@@ -160,5 +163,63 @@ Your browser does not support the audio element.
     <h4>Maria-Nikolette Muraru &copy; 2026</h4>
     </footer>
 
+
+    
+
+<!-- Custom Cursor Graphic Elements -->
+  <div id="custom-cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- JavaScript Interaction Logic Controller -->
+  <script>
+    const cursorDot = document.getElementById('custom-cursor');
+    const cursorFollower = document.getElementById('cursor-follower');
+
+    // 1. Core Position Tracking
+    window.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      // Bind basic dot instantly to client coordinate points
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
+
+      // Follower trails slightly behind automatically via CSS easing values
+      cursorFollower.style.left = `${mouseX}px`;
+      cursorFollower.style.top = `${mouseY}px`;
+    });
+
+    // 2. Interactive Hover States (Selects links, buttons, and your spikeball wrapper)
+    const interactiveElements = document.querySelectorAll('a, button, .image-button, .side-wrapper, .navbar a');
+    
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        document.body.classList.add('cursor-hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        document.body.classList.remove('cursor-hover');
+      });
+    });
+
+    // 3. Click Ripple Wave Generation Physics
+    window.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      ripple.className = 'cursor-click-ripple';
+      ripple.style.left = `${e.clientX}px`;
+      ripple.style.top = `${e.clientY}px`;
+      
+      document.body.appendChild(ripple);
+
+      // Clean up the node immediately after the animation completes
+      setTimeout(() => {
+        ripple.remove();
+      }, 400);
+    });
+  </script>
+    
+
 </body>
+
+
+
 </html>

@@ -1,0 +1,67 @@
+/* --------------------------------------------------------------------------
+   1. GLOBAL SYSTEM SETUP
+   -------------------------------------------------------------------------- */
+
+
+/* Hide the default generic browser pointer everywhere for custom cursor */
+html, body, a, button, .image-button, .navbar a, iframe {
+  cursor: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. CUSTOM HARDWARE INTERACTIVE MOUSE CURSOR
+   -------------------------------------------------------------------------- */
+#custom-cursor {
+  width: 8px;
+  height: 8px;
+  background: #f200ff; 
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Stops the cursor element from blocking underlying DOM clicks */
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+#cursor-follower {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #003a37; 
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.08s ease-out, width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+/* Animated hover trigger states over interactive elements */
+.cursor-hover #custom-cursor {
+  width: 8px;
+  height: 8px;
+  background: #ffffff; 
+}
+
+.cursor-hover #cursor-follower {
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.2); 
+  border-color: #14FFF7;
+}
+
+/* Click particle bubble effect */
+.cursor-click-ripple {
+  position: fixed;
+  border: 5px solid #f200ff; 
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9997;
+  transform: translate(-50%, -50%);
+  animation: clickRippleEffect 0.4s ease-out forwards;
+}
+
+@keyframes clickRippleEffect {
+  0% { width: 10px; height: 10px; opacity: 1; }
+  100% { width: 60px; height: 60px; opacity: 0; border-width: 1px; }
+}
+

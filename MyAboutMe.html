@@ -2,8 +2,9 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+<link rel="stylesheet" href="style.css">
 
+<style>
 
 * {
   box-sizing: border-box;
@@ -27,7 +28,7 @@ header {
 /* Navigation bar links */
 .navbar a {
   background-color: rgb(0, 81, 43);
-  color: #00963a;
+  color: #ffffff;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -36,7 +37,7 @@ header {
 /* Change color on hover */
 .navbar a:hover {
   background-color: #00963a;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 81, 43);
 }
 
 /* Column container */
@@ -146,5 +147,57 @@ footer {
     <p>Maria-Nikolette Muraru &copy; 2026</p>
     </footer> 
 
+<!-- Custom Cursor Graphic Elements -->
+  <div id="custom-cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- JavaScript Interaction Logic Controller -->
+  <script>
+    const cursorDot = document.getElementById('custom-cursor');
+    const cursorFollower = document.getElementById('cursor-follower');
+
+    // 1. Core Position Tracking
+    window.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      // Bind basic dot instantly to client coordinate points
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
+
+      // Follower trails slightly behind automatically via CSS easing values
+      cursorFollower.style.left = `${mouseX}px`;
+      cursorFollower.style.top = `${mouseY}px`;
+    });
+
+    // 2. Interactive Hover States (Selects links, buttons, and your spikeball wrapper)
+    const interactiveElements = document.querySelectorAll('a, button, .image-button, .side-wrapper, .navbar a');
+    
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        document.body.classList.add('cursor-hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        document.body.classList.remove('cursor-hover');
+      });
+    });
+
+    // 3. Click Ripple Wave Generation Physics
+    window.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      ripple.className = 'cursor-click-ripple';
+      ripple.style.left = `${e.clientX}px`;
+      ripple.style.top = `${e.clientY}px`;
+      
+      document.body.appendChild(ripple);
+
+      // Clean up the node immediately after the animation completes
+      setTimeout(() => {
+        ripple.remove();
+      }, 400);
+    });
+  </script>
+
+    
     </body>
 </html>
