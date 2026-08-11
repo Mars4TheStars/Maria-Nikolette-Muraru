@@ -66,35 +66,24 @@ header h4 {
   color: #A3F7B5;
 }
 
-/* Top navigation bar with arcade-style hover states */
+
+/* Top navigation bar */
 .navbar {
   display: flex;
   background-color: #40C9A2;
-  border: 3px solid #000;
-  box-shadow: 6px 6px 0px #000;
-  margin-bottom: 20px;
-  overflow: hidden;
 }
 
+/* Navigation bar links */
 .navbar a {
-  color: #E5F9E0;
-  padding: 14px 10px;
+  color: #E5F9E0; /* text color */
+  padding: 14px 20px;
   text-decoration: none;
   text-align: center;
-  font-weight: bold;
-  flex: 1;
-
-  border-right: 2px solid rgba(0,0,0,0.15);
-
-    display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .navbar a:hover {
   background-color: #2F9C95;
   color: #A3F7B5;
-  transform: scale(1.05);
 }
 
 /* Banner asset frame */
@@ -112,10 +101,9 @@ header h4 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  perspective: 1000px; /* Activates 3D tilting space */
 }
 
-/* Interactive 3D Side/Main Content Panels */
+/* Main Content Panels */
 .side, .main {
   border: 3px solid #000;
   box-shadow: 8px 8px 0px #000;
@@ -159,7 +147,6 @@ a.mail-link {
 
 .image-button {
   padding: 10px;
-  
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -187,11 +174,13 @@ footer {
   margin-top: 30px;
 }
 
-/* Responsiveness fallback */
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-  .container { flex-direction: column; }
-  .navbar { flex-direction: column; }
+  .container, .navbar {   
+    flex-direction: column;
+  }
 }
+
 </style>
 </head>
 <body>
@@ -247,90 +236,6 @@ footer {
   </footer>
 </div>
 
-<script>
-  /* INTERACTION SCRIPT 1: 3D MOUSE PARALLAX CARD TILT */
-  const cards = document.querySelectorAll('.interactive-card');
-  
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      // Calculate rotation weights based on cursor coordinate offset points
-      const xc = rect.width / 2;
-      const yc = rect.height / 2;
-      const angleX = (yc - y) / 10;
-      const angleY = (x - xc) / 15;
-      
-      card.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.01)`;
-      card.style.boxShadow = `${-angleY * 1.5}px ${angleX * 1.5}px 12px rgba(0,0,0,0.3), 8px 8px 0px #000`;
-    });
-    
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-      card.style.boxShadow = '8px 8px 0px #000';
-    });
-  });
-
-  /* INTERACTION SCRIPT 2: FLOATING CANVAS SPARK PARTICLES */
-  const canvas = document.getElementById('particle-canvas');
-  const ctx = canvas.getContext('2d');
-  
-  let particles = [];
-  
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = canvas.height + Math.random() * 100;
-      this.size = Math.random() * 4 + 2;
-      this.speedY = Math.random() * 1 + 0.4;
-      // Cycle theme accent configurations safely
-      this.color = Math.random() > 0.5 ? '#40C9A2' : '#2F9C95';
-      this.opacity = Math.random() * 0.5 + 0.2;
-    }
-    update() {
-      this.y -= this.speedY;
-      if (this.y < -10) {
-        this.y = canvas.height + 10;
-        this.x = Math.random() * canvas.width;
-      }
-    }
-    draw() {
-      ctx.fillStyle = this.color;
-      ctx.globalAlpha = this.opacity;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  function init() {
-    particles = [];
-    for (let i = 0; i < 40; i++) {
-      particles.push(new Particle());
-    }
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-    requestAnimationFrame(animate);
-  }
-
-  init();
-  animate();
-</script>
 
 </body>
 
