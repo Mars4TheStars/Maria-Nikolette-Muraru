@@ -59,17 +59,13 @@ footer {
 /* THE PARENT CONTAINER */
 .social-container {
   display: flex;            /* Activates horizontal row layout */
-  
   flex-direction: row;      /* Locks items onto a horizontal axis line */
-  align-items: center;      /* Lines up the horizontal midpoints of both icons */
   gap: 20px;                /* Puts clean horizontal space between them */
 }
 
 .image-button {
-      
       transition: transform 0.2s ease, opacity 0.2s ease;
-      gap: 20px;     /* Defines the space between the two buttons */
-      
+      gap: 20px;     /* Defines the space between buttons */
     }
 
     /* Slight zoom and full brightness on hover */
@@ -83,19 +79,6 @@ footer {
       border: none;
       display: block;      
     }
-
-    /* Sizing individual images cleanly in CSS */
-.social-container .image-button:nth-child(1) img {
-  width: 100px;             /* Target Discord width */
-}
-
-.social-container .image-button:nth-child(2) img {
-  width: 80px;              /* Target Instagram width */
-}
-
-
-
-
 
     body {background-color:  #D0CE7C}
     /* page category */
@@ -114,6 +97,20 @@ footer {
     h3{ color: black;
         padding: 20px;
         }
+      h5{color: black;
+      padding-left: 35%;
+      font-size: 20px;
+      text-align: center;
+      box-sizing: border-box; 
+      
+      
+    }
+
+.floated-iframe {
+  float: left;            /* Aligns the iframe to the left */    
+  margin: 10px;
+  
+}
     
     </style> 
 
@@ -152,7 +149,7 @@ footer {
 
 
 <h2>Silent Film</h2>
-<div id="Silent Film"></div> <!-- div#Silent Film to get it  -->
+<div id="Silent Film" class="floated-iframe"> <!-- div#Silent Film to get it  -->
 <iframe 
 width="420" 
 height="345" 
@@ -162,16 +159,46 @@ frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen>
 </iframe>
+</div>
 
-<div class="social-container">
+
+
+
+<h5> Accompanying poem of the video:</h5>
+
+<h5> <i>In Life's Chaotic Dance </i> by Maria-Nikolette Muraru</b><br><br>
+
+In the chaos of life, we whirl and twirl,<br>
+A fleeting dance, a transient swirl.<br>
+Moments, like whispers, swiftly pass,<br>
+Time slips away, too quick, alas.<br>
+<br>
+Dreams and hopes, lost in the breeze,<br>
+We chase tomorrow, as today does not appease.<br>
+Life's tapestry, woven with unsolved riddles,<br>
+A masterpiece it could be, but rigged with missiles.<br>
+<br>
+The ticking clock, its relentless chime,<br>
+Each second gone by, a stolen rhyme.<br>
+Silent footsteps of the unwelcomed guest,<br>
+Time's sand fills up the coffin slowly, for an easy rest.<br>
+<br>
+We journey on, not knowing when,<br>
+The final act arrives, when the curtain will descend.<br>
+Cherish the chaos, the beauty, the strife,<br>
+For in the blink of an eye, it's the end of life.<br>
+<br>
+
+</h5>
+
+  <div class="social-container" >
 <a href="https://youtube.com/embed/OhivnwXcQPk?si=NHU_xjGrGG3Z5zQK" class="image-button">
-      <img src="Sprites/wodden play button.png"  style="padding: 20px;">
+      <img src="Sprites/wodden play button.png"  width="50px" height="50px" >
     </a></div>
 <p> if the video player isn't working press the play button</p>
-  
 
 <h2>Union Station Documentary</h2>
-<div id="Union Station Documentary"></div> <!-- div#Union Station Documentary to get it  -->
+<div id="Union Station Documentary" class="floated-iframe"></div> <!-- div#Union Station Documentary to get it  -->
 <iframe 
 width="420" 
 height="345" 
@@ -183,14 +210,14 @@ allowfullscreen>
 
 <div class="social-container">
 <a href="https://youtube.com/embed/j1pjeU2EHnE?si=LgU5jBvEens2-7pf" class="image-button">
-      <img src="Sprites/wodden play button.png"style="padding: 20px;">
+      <img src="Sprites/wodden play button.png"  width="50px" height="50px">
     </a></div>
 <p> if the video player isn't working press the play button</p>
 
 
 
 <h2>Animation in After Effects based on the book Crimson Shard</h2>
-<div id="Animation in After Effects based on the book Crimson Shard"></div> <!-- div#Animation in After Effects based on the book Crimson Shard to get it  -->
+<div id="Animation in After Effects based on the book Crimson Shard" class="floated-iframe"></div> <!-- div#Animation in After Effects based on the book Crimson Shard to get it  -->
 <iframe 
 width="420" 
 height="345" 
@@ -203,12 +230,12 @@ allowfullscreen>
 
 <div class="social-container">
 <a href="https://youtube.com/embed/tJVMLNMgyCA?si=IhRnmp0ChWbU1ftU" class="image-button">
-      <img src="Sprites/wodden play button.png" style="padding: 20px;"> </a> </div>
+      <img src="Sprites/wodden play button.png"  width="50px" height="50px"> </a> </div>
 <p> if the video player isn't working press the play button</p>
 
 
 <h2>Exploration of Editing my skiing with GoPro</h2>
-<div id="Exploration of Editing my skiing with GoPro"></div> <!-- div#Exploration of Editing my skiing with GoPro to get it  -->
+<div id="Exploration of Editing my skiing with GoPro" class="floated-iframe"></div> <!-- div#Exploration of Editing my skiing with GoPro to get it  -->
 <iframe 
 width="420" 
 height="345" 
@@ -221,13 +248,13 @@ allowfullscreen>
 
 <div class="social-container">
 <a href="https://youtube.com/embed/a9NKIPC6MBI?si=uJwT4n6hQkSmwmq6" class="image-button">
-      <img src="Sprites/wodden play button.png" width="100" style="padding: 20px;">
+      <img src="Sprites/wodden play button.png" width="50px" height="50px">
     </a></div>
 <p> if the video player isn't working press the play button</p>
 
 
 <h2>Stopmotion exploration</h2>
-<div id="Stopmotion exploration"></div> <!-- div#Stopmotion exploration to get it  -->
+<div id="Stopmotion exploration" class="floated-iframe"></div> <!-- div#Stopmotion exploration to get it  -->
 <iframe 
 width="420" 
 height="345" 
@@ -240,7 +267,7 @@ allowfullscreen>
 
 <div class="social-container">
 <a href="https://youtube.com/embed/XC9kJY7baE8?si=gfuBjYfZggvje-kz" class="image-button">
-      <img src="Sprites/wodden play button.png" width="100" height="100" style="padding: 20px;">
+      <img src="Sprites/wodden play button.png" width="50px" height="50px">
     </a></div>
 <p> if the video player isn't working press the play button</p>
 
