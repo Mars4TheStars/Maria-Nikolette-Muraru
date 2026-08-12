@@ -60,14 +60,16 @@ footer {
   .bubble-btn, .feature-bubble-btn {
     width: 80px !important;
     height: 80px !important; /*smallest size acceptable for mobile screens */
+    position: static !important; /* Disables screen-locking fixed positions */
   }
+
    /* Bubble 1*/
   .b1 {
     top: 700px;
    right: 5%;
-    bottom: auto; /* Clears desktop setting */
-    right: auto;
-    left:auto;
+    bottom: auto; /* Clears desktop setting  only repeat in this function*/
+    right: auto;/* Clears desktop setting */
+    left:auto;/* Clears desktop setting */
   }
 
   /* Bubble 2 golden gavel*/
@@ -305,6 +307,8 @@ footer {
     
 </style>
 </head> <!-- THESE ALL ARE HASHTAGS KIND OF GLOBAL VARIABLES  -->
+<div id="grad1">
+
 
 <!-- Header -->
 <header>
@@ -433,7 +437,7 @@ Your browser does not support the audio element.
     </footer>
 
 
-    
+ </div>   
 
 <!-- Custom Cursor Graphic Elements -->
   <div id="custom-cursor"></div>
