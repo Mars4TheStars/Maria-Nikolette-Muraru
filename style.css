@@ -8,6 +8,17 @@ html, body, a, button, .image-button, .navbar a, iframe {
   cursor: none !important;
 }
 
+  #grad1 {
+  background-image: linear-gradient(to top, #E5F9E0, #a0eaff, #A3F7B5, #40C9A2, #2F9C95);
+  background-color: #E5F9E0;
+  min-height: 100vh;
+  background-attachment: fixed;
+  padding: 20px; /* <--- THIS IS THE CAUSE */
+  font-family: 'Courier New', monospace;
+  position: relative;
+  overflow-x: hidden;
+}
+
 /* --------------------------------------------------------------------------
    2. CUSTOM HARDWARE INTERACTIVE MOUSE CURSOR
    -------------------------------------------------------------------------- */

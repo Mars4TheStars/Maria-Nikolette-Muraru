@@ -45,9 +45,11 @@ footer {
   text-align: center;
   background: #006870;
   color: white;
-  bottom: 1px;
-  width: 100%;
   position: fixed;
+  bottom: 0;   /* Pins it completely flush to the very bottom */
+  left: 20px;     /* Forces it to stretch from the absolute left wall */
+  right: 20px;    /* Forces it to stretch to the absolute right wall */
+  
 }
 
 
@@ -106,18 +108,6 @@ footer {
     width: 130px !important;     /* Keep the feature bubble slightly larger */
     height: 130px !important;
   }
-}
-
-
-    #grad1 {
-  background-image: linear-gradient(to top, #E5F9E0, #a0eaff, #A3F7B5, #40C9A2, #2F9C95);
-  background-color: #E5F9E0;
-  min-height: 100vh;
-  background-attachment: fixed;
-  padding: 20px; /* <--- THIS IS THE CAUSE */
-  font-family: 'Courier New', monospace;
-  position: relative;
-  overflow-x: hidden;
 }
 
     body {background-color: #a0eaff;} 
