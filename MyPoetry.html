@@ -34,6 +34,7 @@
 }
 
 
+
 /* Footer */
 footer {
   padding: 20px;
@@ -86,10 +87,10 @@ aside {
 }
 
 .subject {
-  width: 320px;
-  height: 200px;
+  width: 350px;
+  height: 300px;
   padding: 20px;
-  border: 5px solid gray;
+  border: 5px solid rgb(255, 255, 255);
   margin: 5px;
 }
 
@@ -97,7 +98,7 @@ aside {
 
 </style>
 </head>
-
+<body>
 <!-- Header -->
 <header>
   <h4>Maria-Nikolette Muraru</h4>
@@ -115,20 +116,37 @@ aside {
   <a href="MyAboutMe.html">About Me</a>
 </div>
 
-<h1> My Poetry </h1>
+<h1>Go on open up the book</h1>
 
+  <div class="flipbook" class="page">
+    <div class="hard">My Poetry <small> by Maria-Nikolette Muraru</small> <br><br><br><br>
+    <small><u>Click in the corners to start</u> </small></div>
+    <div class="hard"></div>
+    <div>
+      
+        
 <p>Table of Contents</p>
 <ol style="list-style-type:upper-roman">
-<li><a href="#Blackout Poem">A Blackout Poem</a></li>
-<li><a href="#Space">Space</a></li>
-<li><a href="#Liar">A liar</a></li>
+<li>A Blackout Poem</a></li>
+<li>Space</a></li>
+<li>A liar</a></li>
 </ol>
 
-<body>
+    </div>
+    <div>
+     
+      <img  src="Images/Poetry/An Oligarch-what a lie.png" alt="" />
+      <small> 2022 </small>
+    </div>
+    <div>
+      
+      <img  src="Images/Poetry/Space.png" alt="" />
+      <small> 2025 </small>
+    </div>
 
-<h3> A Blackout Poem</h3>
-<div id="Blackout Poem"></div> <!-- div#Blackout Poem to get it  -->
-<div class="subject"> a townhouse                     blazed 
+    <div>
+      
+      <div class="subject"> a townhouse                     blazed 
   overlooking Manhattans skyline               melting 
   in july       sun 
   a pretty and spoiled,         notes it and if she doesn't do something 
@@ -141,19 +159,24 @@ aside {
   "silly Clara" She giggles she doesn't take it seriously 
 </div> 
 <p> Note: </p>
-<sub> I unfortunatelly do not remember what short story was used. </sub>
+<sub> I unfortunately do not remember what short story was used. </sub>
+      <small> 2019 </small>
+    </div>
 
+    <div>
+      <img src="Images/Poetry/" alt="" />
+      <small>  </small>
+    </div>
 
+    <div class="hard"></div>
+    <div class="hard">Thank You 4 Reading <small>~ Maria-Nikolette Muraru</small></div>
+  </div>
 
-<h3>Space</h3>
-<div id="Space"></div> <!-- div#Space to get it  -->
-<img src="Images/Poetry/Space.png" alt="Poem about space"
-width="400" height="500">
-
-<h3>A liar</h3>
-<div id="Liar"></div> <!-- div#Liar to get it  -->
-<img src="Images/Poetry/An Oligarch-what a lie.png" alt="Poem about a liar"
-width="400" height="400">
+  <script src="jquery.js"></script>
+  <script src="turn.js"></script>
+  <script>
+    $(".flipbook").turn();
+  </script>
 
 
 
