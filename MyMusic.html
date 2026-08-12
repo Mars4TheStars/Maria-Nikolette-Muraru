@@ -7,6 +7,7 @@
 <head>
     <style>
 
+
 /* Header */
 header {
   padding: 10px;
@@ -44,6 +45,9 @@ footer {
   text-align: center;
   background: #006870;
   color: white;
+  bottom: 1px;
+  width: 100%;
+  position: fixed;
 }
 
 
@@ -52,16 +56,76 @@ footer {
   .container, .navbar {   
     flex-direction: column;
   }
+
+  .bubble-btn, .feature-bubble-btn {
+    width: 80px !important;
+    height: 80px !important; /*smallest size acceptable for mobile screens */
+  }
+   /* Bubble 1*/
+  .b1 {
+    top: 700px;
+   right: 5%;
+    bottom: auto; /* Clears desktop setting */
+    right: auto;
+    left:auto;
+  }
+
+  /* Bubble 2 golden gavel*/
+  .b2 {
+    top: 1000px !important;
+    right: 55%;
+    width: 90px !important;
+    height: 90px !important;
+  }
+
+  /* Bubble 3 solar sailors main track*/
+  .b3 {
+    top: 850px;
+    left: 70%;
+    
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  /* Bubble 4 solar sailors start menu*/
+  .b4 {
+    top: 850px;
+    left:10%;
+    
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+
+  /* Green Feature Bubble (Beats & Brains)*/
+  .feature-bubble-btn.b1 {
+    bottom: 10%;
+    right: 10%;
+    width: 130px !important;     /* Keep the feature bubble slightly larger */
+    height: 130px !important;
+  }
 }
 
 
-    
+    #grad1 {
+  background-image: linear-gradient(to top, #E5F9E0, #a0eaff, #A3F7B5, #40C9A2, #2F9C95);
+  background-color: #E5F9E0;
+  min-height: 100vh;
+  background-attachment: fixed;
+  padding: 20px; /* <--- THIS IS THE CAUSE */
+  font-family: 'Courier New', monospace;
+  position: relative;
+  overflow-x: hidden;
+}
+
     body {background-color: #a0eaff;} 
     /* page category */
-    h1   {color: #213E53;
+    .page-title   {color: #213E53;
           padding: 60px;
           background-color: #14FFF7; 
-          text-align:center;}
+          text-align:center;
+          box-shadow: 6px 6px 0px #213E53;
+        }
     p    {padding-left: 20px;
           font-size: 18px;
           color: #002226;}
@@ -70,7 +134,174 @@ footer {
         color: #14FFF7;
         padding: 20px;
         }
-    
+
+
+.feature-bubble-btn {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  position: fixed;   /* Locks it to the screen */
+  
+  border-radius: 50%;
+  border: none;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 255, 98, 0.4) 60%, rgba(0, 190, 73, 0.6) 100%);
+  box-shadow: inset -5px -5px 15px rgba(0, 128, 47, 0.5), 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: rgb(0, 46, 92);
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: feature-floatBubble 4s ease-in-out infinite;
+  display: inline-block; /* Ensures the animation movement works perfectly */
+}
+
+/* THE FLOATING ANIMATION LOGIC */
+@keyframes feature-floatBubble {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px); /* Moves up 15 pixels */
+  }
+  100% {
+    transform: translateY(0px); /* Returns to original spot */
+  }
+}
+
+.feature-bubble-btn:hover {
+  transform: scale(1.05);
+  box-shadow: inset -5px -5px 15px rgba(0, 64, 128, 0.4), 0 8px 20px rgba(0, 191, 255, 0.4);
+}
+
+.feature-bubble-btn.b1 {
+  bottom: 40%;
+  left: 50%;
+  width: 140px; 
+  height: 140px;
+  animation-delay: 0s; /* Starts moving instantly */
+}
+
+
+.bubble-btn {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  position: fixed;   /* Locks it to the screen */
+  
+  border-radius: 50%;
+  border: none;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 191, 255, 0.4) 60%, rgba(0, 119, 190, 0.6) 100%);
+  box-shadow: inset -5px -5px 15px rgba(0, 64, 128, 0.5), 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: floatBubble 4s ease-in-out infinite;
+  display: inline-block; /* Ensures the animation movement works perfectly */
+}
+
+/* THE FLOATING ANIMATION LOGIC */
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px); /* Moves up 15 pixels */
+  }
+  100% {
+    transform: translateY(0px); /* Returns to original spot */
+  }
+}
+
+.bubble-btn:hover {
+  transform: scale(1.05);
+  box-shadow: inset -5px -5px 15px rgba(0, 64, 128, 0.4), 0 8px 20px rgba(0, 191, 255, 0.4);
+}
+
+/* Position Bubble 1:  */
+.b1 {
+  bottom: 45%;
+  left: 15%;
+  width: 90px; 
+  height: 90px;
+  animation-delay: 0s; /* Starts moving instantly */
+}
+
+/* Position Bubble 2: */
+.b2 {
+  top: 30%;
+  right: 50%;
+  width: 120px; 
+  height: 120px;
+  animation-delay: 1s; /* Starts 1 second later so it alternates */
+}
+
+/* Position Bubble 3 main track solar sailors*/
+.b3 {
+  bottom: 25%;
+  right:20%;
+  width: 130px; /* bigger number = bigger bubble */
+  height: 130px;
+  animation-delay: 2s; /* Starts 2 seconds later */
+}
+
+/* Position Bubble 4*/
+.b4 {
+  bottom: 60%;
+  right: 25%;
+  width: 150px; 
+  height: 150px;
+  animation-delay: 3s; /* Starts 4 seconds later */
+}
+
+/* Position Bubble 5: solar sailors start menu */
+.b5 {
+  bottom: 45%;
+  right: 60%;
+  width: 100px; 
+  height: 100px;
+  animation-delay: 3s;
+}
+
+
+/* Styling for the popup container background */
+.popup-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Styling for the actual popup box */
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  min-width: 300px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Close button style */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
     
 </style>
 </head> <!-- THESE ALL ARE HASHTAGS KIND OF GLOBAL VARIABLES  -->
@@ -93,53 +324,84 @@ footer {
 </div>
 
 
-<h1> My music </h1>
-
-<p>Table of Contents</p>
-<ol style="list-style-type:upper-roman">
-<li><a href="#Y2025">Year 2025</a></li>
-<li><a href="#Y2026">Year 2026</a></li>
-</ol>
+<h1 class="page-title"> My music </h1>
 
 
-<h3> Year 2025 </h3> <div id="Y2025"></div>
 
-<body>
-
-<audio controls>
+<!-- The Bubble Button -->
+<button class="bubble-btn b1" data-popup="popup1">Epic Hyperpop</button>
+<!-- The Popup Backdrop -->
+<div class="popup-overlay" id="popup1">
+  <!-- The Actual Popup Box -->
+  <div class="popup-content">
+    <button class="close-btn">&times;</button>
+    <h2>Epic Hyperpop</h2>
+    <audio controls>
     <source src="Music/EpicHyperpop_version2.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
-
+<p>year 2025</p> <br>
 <p> an exploration of hyperpop</p>
+  </div>
+</div>
 
-<audio controls>
+<!-- The Bubble Button -->
+<button class="bubble-btn b2" data-popup="popup2">Golden Gavel Main track</button>
+<!-- The Popup Backdrop (Stays the same) -->
+<div class="popup-overlay" id="popup2">
+  <div class="popup-content">
+    <button class="close-btn">&times;</button>
+    <h2>Golden Gavel Main track</h2>
+    <audio controls>
+      <source src="Music/Golden Gavel_Main Track.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <p>year 2025</p> <br>
+    <p> The main soundtrack for "The Golden Gavel" game made a one week game jam. Hosted by Metropolitan Game Studio. </p>
+  </div>
+</div>
+
+<!-- The Bubble Button -->
+<button class="bubble-btn b3" data-popup="popup3">Solar Sailors Main track</button>
+<!-- The Popup Backdrop (Stays the same) -->
+<div class="popup-overlay" id="popup3">
+  <div class="popup-content">
+    <button class="close-btn">&times;</button>
+    <h2>Solar Sailors Main track</h2>
+    <audio controls>
     <source src="Music/Solar_sailorr_Backgroundmusic.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
-
+<p>year 2025</p>
 <p> made for my game solar sailors as the main game soundtrack</p>
+  </div>
+</div>
 
-<audio controls>
+<!-- The Bubble Button -->
+<button class="bubble-btn b4" data-popup="popup4">Solar Sailors Start Menu Music</button>
+<!-- The Popup Backdrop (Stays the same) -->
+<div class="popup-overlay" id="popup4">
+  <div class="popup-content">
+    <button class="close-btn">&times;</button>
+    <h2>Solar Sailors Start Menu Music</h2>
+    <audio controls>
     <source src="Music/StartMenuMusic_SolarSailors.wav" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
+<p>year 2025</p>
+<p> made for my game solar sailors as the start menu music</p>
+  </div>
+</div>
 
 
-<h3> Year 2026 </h3> <div id="Y2026"></div>
-
-<audio controls>
-    <source src="Music/Golden Gavel_unsetling jazz_Game Jam.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-
-<p> The main soundtrack for "The Golden Gavel" game made a one week game jam. Hosted by Metropolitan Game Studio. </p>
-
-<br>
-
-<h2> Beats & Brains</h2>
-
-<a href = "https://store.steampowered.com/app/4756930/Beats__Brains/"> 
+<!-- The Bubble Button -->
+<button class="feature-bubble-btn b1" data-popup="popup5">Beats & Brains</button>
+<!-- The Popup Backdrop (Stays the same) -->
+<div class="popup-overlay" id="popup5">
+  <div class="popup-content">
+    <button class="close-btn">&times;</button>
+    <h2>Beats & Brains</h2>
+    <a href = "https://store.steampowered.com/app/4756930/Beats__Brains/"> 
   <p>Beats & Brain's Steam page</p>
 </a>
 
@@ -155,8 +417,15 @@ Your browser does not support the audio element.
 <li>Finally we showcased at the Toronto Games Week on June 11th.</li>
 </ol>
   
-  
+  </div>
+</div>
 
+
+<body>
+
+  
+  
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <!-- Footer -->
 <footer>
@@ -215,8 +484,46 @@ Your browser does not support the audio element.
         ripple.remove();
       }, 400);
     });
+  
   </script>
-    
+
+
+<script>
+    // Find all bubble buttons on the page
+const allBubbles = document.querySelectorAll('.bubble-btn, .feature-bubble-btn');
+
+// Loop through each bubble button automatically
+allBubbles.forEach(bubble => {
+  // Get the matching popup ID from the data attribute (e.g., 'popup1')
+  const popupId = bubble.getAttribute('data-popup');
+  const targetPopup = document.getElementById(popupId);
+  
+  if (targetPopup) {
+    // Open popup when this specific bubble is clicked
+    bubble.addEventListener('click', () => {
+      targetPopup.style.display = 'flex';
+    });
+
+    // Find the close button INSIDE this specific popup box
+    const closeBtn = targetPopup.querySelector('.close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        targetPopup.style.display = 'none';
+      });
+    }
+
+    // Close the popup if clicking on the dark background mask overlay
+    targetPopup.addEventListener('click', (e) => {
+      if (e.target === targetPopup) {
+        targetPopup.style.display = 'none';
+      }
+    });
+  }
+});
+
+  </script>
+
+
 
 </body>
 

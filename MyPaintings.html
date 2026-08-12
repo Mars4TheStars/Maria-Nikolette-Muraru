@@ -41,6 +41,7 @@ footer {
   text-align: center;
   background: #60992D;
   color: #550C18;
+  
 }
 
 /* sticky table of contents */
@@ -67,7 +68,12 @@ footer {
     h1   {color: #550C18;
           padding: 60px;
           background-color: #CE8147;
-          text-align:center;}
+          text-align:center;
+          box-shadow: 6px 6px 0px #213E53;
+          
+          top: 150px;   /* Chooses how far down from the top edge it sits */
+          z-index: 1001;
+        }
     p    {padding-left: 20px;
       font-size: 18px;
       color: #07070A;}
@@ -101,7 +107,7 @@ footer {
   
 <h1>My Paintings</h1>
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br> <!-- to make space for the fixed h1 -->
 
 <p>Table of Contents</p> 
 <ol style="list-style-type:upper-roman"> 
