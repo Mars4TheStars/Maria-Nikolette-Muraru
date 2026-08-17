@@ -16,11 +16,24 @@ footer {
   color: #A7CDBD;
 }
 
+.p{
+  opacity: 0%;
+}
+
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .container, .navbar, footer {   
     flex-direction: column;
+  }
+
+  .p{
+    width: 90%;
+  height: 300px;
+  padding: 20px;
+  border: 5px transparent rgb(0, 0, 0);
+  margin: 5px;
+   opacity: 100%;
   }
 
 }
@@ -39,6 +52,7 @@ footer {
           font-size: 18px;
       color: black;
       float:left;
+      content: center;
       
           }
 
@@ -103,7 +117,7 @@ aside {
 
 <h1>My Poetry</h1>
 
-<p> <b> The book playing hide and seek on you? Scroll sideways to find it! If you do see it good for you... </b></p>
+<p class="p">  <b> The book playing hide and seek on you? Scroll sideways to find it! If you do see it good for you... </b></p>
 
 <div class="flipbook" class="page">
     <div class="hard">My Poetry <small> by Maria-Nikolette Muraru</small> <br><br><br><br>
