@@ -3,13 +3,47 @@
    -------------------------------------------------------------------------- */
 
 
+/* Header */
+header {
+  padding: 25px;
+  text-align: center;
+  background: #A3F7B5;
+  color: rgb(10, 9, 9);
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0px #000;
+  margin-bottom: 15px;
+}
+
+/* Top navigation bar */
+.navbar {
+  display: flex;
+  background-color: #389c2f;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0px #000;
+  margin-bottom: 25px;
+}
+
+/* Navigation bar links */
+.navbar a {
+  color: #E5F9E0; /* text color */
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #A3F7B5;
+  color: #000000;
+}
+
 /* Hide the default generic browser pointer everywhere for custom cursor */
 html, body, a, button, .image-button, .navbar a, iframe {
   cursor: none !important;
 }
 
+
   #grad1 {
-  background-image: linear-gradient(to top, #E5F9E0, #a0eaff, #A3F7B5, #40C9A2, #2F9C95);
+  background-image: linear-gradient(to top, #002491, #32d3ff, #00c8ff, #32d3ff, #002491);
   background-color: #E5F9E0;
   min-height: 100vh;
   background-attachment: fixed;
@@ -19,63 +53,262 @@ html, body, a, button, .image-button, .navbar a, iframe {
   overflow-x: hidden;
 }
 
+.sky-background {
+    position: absolute;     /* Fixed keeps the background locked even if you scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;         /* Forces the layer behind your layout content */
+    
+}
+
+.cloud {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 100px;
+    z-index: 10; 
+    
+    /* Variable handles for individual sizing */
+    width: var(--width);
+    height: var(--height);
+    opacity: var(--opacity, 1); 
+    
+}
+
+/* Shared logic for the fluffy top bumps */
+.cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+/* Left circle shape formulas */
+.cloud::before {
+    width: var(--b-size);
+    height: var(--b-size);
+    top: var(--b-top);
+    left: var(--b-left);
+}
+
+/* Right circle shape formulas */
+.cloud::after {
+    width: var(--a-size);
+    height: var(--a-size);
+    top: var(--a-top);
+    right: var(--a-right);
+
+    box-shadow: var(--c-shadow, none); 
+}
+
+/* ==========================================================================
+   2. SHAPE VARIATIONS & POSITIONING
+   ========================================================================== */
+
+/* CORNER 1: TOP LEFT (Tall & Heavy Storm Cloud Shape) */
+.cloud-top-left {
+    top: 40px;
+    left: -40px;
+    --width: 260px;
+    --height: 100px;
+    --b-size: 160px;  /* Huge left bump */
+    --b-top: -85px;
+    --b-left: 30px;
+    --a-size: 110px;  /* Large right bump */
+    --a-top: -55px;
+    --a-right: 30px;
+
+     
+    /* 90% Solid: Acts as the strong anchor of the frame */
+    --opacity: 0.9; 
+}
+
+/* CORNER 2: TOP RIGHT (Long & Flat Wispy Cloud Shape) */
+.cloud-top-right {
+    top: -5px;
+    right: -15px;
+    --width: 300px;
+    --height: 80px;
+    --b-size: 80px;   /*  bump */
+    --b-top: 40px;
+    --b-left: 130px;
+    --a-size: 100px;   /*  bump */
+    --a-top: 40px;
+    --a-right: 10px;
+
+    --opacity: 0.75; 
+}
+
+/* BOTTOM LEFT: Double-Puffy Balanced Cloud */
+.cloud-bottom-left {
+    bottom: 0px;     
+    left: -40px;       
+    --width: 410px;    
+    --height: 130px;   
+    --b-size: 190px;   /* Bumps are closer in size */
+    --b-top: -85px;
+    --b-left: 45px;
+    --a-size: 170px;   /* Creates a bubbling texture */
+    --a-top: -75px;
+    --a-right: 45px;
+
+    --opacity: 0.6; 
+
+}
+
+/* CORNER 4: BOTTOM RIGHT (Giant Triple-Fluffy Character Seat) */
+.cloud-bottom-right {
+    bottom: 10px;       
+    right: -60px;        
+    
+    /* Massive base platform */
+    --width: 520px;     /* Made slightly wider to fit all three bumps beautifully */
+    --height: 120px;    
+    
+    /* BUMP 1 (Left Circle): Huge backrest wall */
+    --b-size: 240px;   
+    --b-top: -170px;    
+    --b-left: 40px;     
+    
+    /* BUMP 2 (Right Circle): Outer right edge fluff */
+    --a-size: 160px;
+    --a-top: -100px;
+    --a-right: 30px;    
+
+    /* BUMP 3 (Center Circle): Projected via box-shadow */
+    /* Syntax: X-offset, Y-offset, Blur(0), Spread(0), Color */
+    /* This pushes a perfect copy -140px to the left and -30px higher up */
+    --c-shadow: -140px -30px 0 20px #ffffff;
+
+    --opacity: 1;       
+}
+
+/* N Left Screen Border (Long ) */
+.cloud-mid-left {
+    top: 80%;          /* Placed halfway down the left wall */
+    left: -60px;       /* Bled off-screen */
+    --width: 380px;
+    --height: 80px;
+    --b-size: 130px;   
+    --b-top: -60px;
+    --b-left: 60px;
+    --a-size: 100px;   
+    --a-top: -45px;
+    --a-right: 60px;
+    --opacity: 0.35;   /* Very soft so it stays in the distant background */
+}
+
+/* Right Screen Border  */
+.cloud-mid-right {
+    top: 80%;          /* Placed near the upper right wall */
+    right: -40px;      
+    --width: 290px;
+    --height: 100px;
+    --b-size: 170px;   /* Large central bump */
+    --b-top: -80px;
+    --b-left: 40px;
+    --a-size: 110px;   
+    --a-top: -50px;
+    --a-right: 40px;
+    --opacity: 0.5;    /* Medium visibility */
+}
+
+/* Upper Center Ceiling (Wispy Overlay) */
+.cloud-upper-center {
+    top: -30px;
+    left: 35%;         /* Peeks down from the top ceiling */
+    --width: 420px;
+    --height: 60px;
+    --b-size: 90px;   
+    --b-top: -40px;
+    --b-left: 90px;
+    --a-size: 80px;   
+    --a-top: -35px;
+    --a-right: 90px;
+    --opacity: 0.4;    /* Subtle mist effect */
+}
+
+/* Lower Left Floor Layer */
+.cloud-lower-left-center {
+    bottom: 0px;
+    left: 25%;         /* Sits next to the bottom-left corner cloud */
+    --width: 310px;
+    --height: 110px;
+    --b-size: 150px;   
+    --b-top: -70px;
+    --b-left: 40px;
+    --a-size: 120px;   
+    --a-top: -55px;
+    --a-right: 40px;
+    --opacity: 0.55;
+}
+
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  /* Hide the bottom corner clouds to make space for mobile thumbs and typing */
+    .cloud-bottom-left, 
+    .cloud-bottom-right, .cloud-lower-left-center, .cloud-mid-right, .cloud-mid-left  {
+        display: none !important;
+    }
+
+    /* Keep only the top two clouds but scale them down so they don't crowd text */
+    .cloud-top-left, 
+    .cloud-top-right {
+        scale: 50%;
+        
+    }
+    
+    .cloud-top-left { 
+      left: -100px; 
+      top: 50px;
+    }
+    .cloud-top-right { 
+      right: -90px; 
+      top: -10px;
+    }
+
+    
+}
+
 /* --------------------------------------------------------------------------
    2. CUSTOM HARDWARE INTERACTIVE MOUSE CURSOR
    -------------------------------------------------------------------------- */
-#custom-cursor {
-  width: 8px;
-  height: 8px;
-  background: #f200ff; 
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none; /* Stops the cursor element from blocking underlying DOM clicks */
-  z-index: 9999;
-  transition: width 0.2s, height 0.2s, background-color 0.2s;
+
+/* 2. Style the custom AVIF tracking cursor box container */
+#avif-airplane-cursor {
+    position: fixed;
+    width: 32px;         /* Match width dimension to image specs */
+    height: 32px;        /* Match height dimension to image specs */
+    left: 0;
+    top: 0;
+    pointer-events: none; /* Let all clicks pass right through to elements below */
+    z-index: 999999;     /* Ensure image stays stacked above website layout layers */
+    transform: translate(-50%, -50%); /* Pin the image directly over coordinate center */
+    will-change: transform;
+    
+    /* FIX: Keep hidden until tracking starts */
+    opacity: 0; 
+    transition: opacity 0.15s ease-in-out;
+    will-change: transform, opacity;
 }
 
-#cursor-follower {
-  width: 30px;
-  height: 30px;
-  border: 2px solid #003a37; 
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9998;
-  transition: transform 0.08s ease-out, width 0.3s, height 0.3s, border-color 0.3s;
+/* 3. Class added by JavaScript once mouse position is known */
+#avif-airplane-cursor.is-active {
+    opacity: 1;
 }
 
-/* Animated hover trigger states over interactive elements */
-.cursor-hover #custom-cursor {
-  width: 8px;
-  height: 8px;
-  background: #ffffff; 
-}
+#avif-airplane-cursor img {
+    width: 200%;
+    height: 200%;
+    object-fit: contain;
+    transition: transform 0.1s ease-out; /* Smooth physical snapping animation */
+    filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.2));
 
-.cursor-hover #cursor-follower {
-  width: 45px;
-  height: 45px;
-  background: rgba(0, 0, 0, 0.2); 
-  border-color: #14FFF7;
+    
 }
-
-/* Click particle bubble effect */
-.cursor-click-ripple {
-  position: fixed;
-  border: 5px solid #f200ff; 
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9997;
-  transform: translate(-50%, -50%);
-  animation: clickRippleEffect 0.4s ease-out forwards;
-}
-
-@keyframes clickRippleEffect {
-  0% { width: 10px; height: 10px; opacity: 1; }
-  100% { width: 60px; height: 60px; opacity: 0; border-width: 1px; }
-}
-
 
 /* --------------------------------------------------------------------------
    3. Flipbook page setup
@@ -133,3 +366,5 @@ body {
 	font-size: 15px;
     margin-bottom: 10px;
 }
+
+

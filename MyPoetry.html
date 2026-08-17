@@ -6,34 +6,6 @@
   
     <style>
 
-/*header*/
-    header
-    { background-color: #91785D;
-      color: #A7CDBD;
-      padding: 10px;
-      text-align: center;}
-
-/* Top navigation bar */
-.navbar {
-  display: flex;
-  background-color: #A7CDBD;
-}
-
-/* Navigation bar links */
-.navbar a {
-  color: #8B5D33;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #91785D;
-  color: #A7CDBD;
-}
-
-
 
 /* Footer */
 footer {
@@ -44,11 +16,13 @@ footer {
   color: #A7CDBD;
 }
 
+
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-  .container, .navbar {   
+  .container, .navbar, footer {   
     flex-direction: column;
   }
+
 }
 
     body {background-color: #BBE1C3}
@@ -58,11 +32,14 @@ footer {
           background-color: #869D7A;
           padding: 60px;
           text-align: center;
+          box-shadow: 6px 6px 0px #283c1e;
         }
 
     p    {padding-left: 20px;
           font-size: 18px;
       color: black;
+      float:left;
+      
           }
 
 /* divide of works / title of works */
@@ -99,6 +76,14 @@ aside {
 </style>
 </head>
 <body>
+
+  <!-- Custom AVIF Pointer Structure -->
+<div id="avif-airplane-cursor">
+    <!-- Replace the src path with your local paper-airplane.avif asset file -->
+    <img id="airplane-img" src="Sprites/Asset 3.png" alt="Paper Airplane Cursor">
+</div>
+
+  <div id="grad1">
 <!-- Header -->
 <header>
   <h4>Maria-Nikolette Muraru</h4>
@@ -116,9 +101,11 @@ aside {
   <a href="MyAboutMe.html">About Me</a>
 </div>
 
-<h1>Go on open up the book</h1>
+<h1>My Poetry</h1>
 
-  <div class="flipbook" class="page">
+<p> <b> The book playing hide and seek on you? Scroll sideways to find it! If you do see it good for you... </b></p>
+
+<div class="flipbook" class="page">
     <div class="hard">My Poetry <small> by Maria-Nikolette Muraru</small> <br><br><br><br>
     <small><u>Click in the corners to start</u> </small></div>
     <div class="hard"></div>
@@ -133,19 +120,23 @@ aside {
 </ol>
 
     </div>
-    <div>
-     
-      <img  src="Images/Poetry/An Oligarch-what a lie.png" alt="" />
-      <small> 2022 </small>
-    </div>
-    <div>
-      
+
+<div>
+      <p> 2025 </p>
       <img  src="Images/Poetry/Space.png" alt="" />
-      <small> 2025 </small>
+        
+      <small> 2 </small>
     </div>
 
     <div>
-      
+     <p> 2022 </p>
+      <img  src="Images/Poetry/An Oligarch-what a lie.png" alt="" />
+      <small> 1 </small>
+    </div>
+
+
+    <div>
+      <p> 2019 </p>
       <div class="subject"> a townhouse                     blazed 
   overlooking Manhattans skyline               melting 
   in july       sun 
@@ -160,7 +151,7 @@ aside {
 </div> 
 <p> Note: </p>
 <sub> I unfortunately do not remember what short story was used. </sub>
-      <small> 2019 </small>
+      <small> 3 </small>
     </div>
 
     <div>
@@ -184,61 +175,30 @@ aside {
 <footer>
     <h4>Maria-Nikolette Muraru &copy; 2026</h4>
 </footer>
+</div>
 
 <body>
-
-  <!-- Custom Cursor Graphic Elements -->
-  <div id="custom-cursor"></div>
-  <div id="cursor-follower"></div>
-
-  <!-- JavaScript Interaction Logic Controller -->
   <script>
-    const cursorDot = document.getElementById('custom-cursor');
-    const cursorFollower = document.getElementById('cursor-follower');
 
-    // 1. Core Position Tracking
-    window.addEventListener('mousemove', (e) => {
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
+ const cursorWrapper = document.getElementById('avif-airplane-cursor');
 
-      // Bind basic dot instantly to client coordinate points
-      cursorDot.style.left = `${mouseX}px`;
-      cursorDot.style.top = `${mouseY}px`;
-
-      // Follower trails slightly behind automatically via CSS easing values
-      cursorFollower.style.left = `${mouseX}px`;
-      cursorFollower.style.top = `${mouseY}px`;
-    });
-
-    // 2. Interactive Hover States (Selects links, buttons, and your spikeball wrapper)
-    const interactiveElements = document.querySelectorAll('a, button, .image-button, .side-wrapper, .navbar a');
+document.addEventListener('mousemove', (e) => {
+    // 1. Instantly move the cursor to the true mouse coordinates
+    cursorWrapper.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
     
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        document.body.classList.add('cursor-hover');
-      });
-      el.addEventListener('mouseleave', () => {
-        document.body.classList.remove('cursor-hover');
-      });
-    });
+    // 2. Reveal the cursor now that we know exactly where it belongs
+    cursorWrapper.classList.add('is-active');
+}, { passive: true });
 
-    // 3. Click Ripple Wave Generation Physics
-    window.addEventListener('click', (e) => {
-      const ripple = document.createElement('div');
-      ripple.className = 'cursor-click-ripple';
-      ripple.style.left = `${e.clientX}px`;
-      ripple.style.top = `${e.clientY}px`;
-      
-      document.body.appendChild(ripple);
+// Optional: Hide it again if the mouse leaves the browser window entirely
+document.addEventListener('mouseleave', () => {
+    cursorWrapper.classList.remove('is-active');
+});
 
-      // Clean up the node immediately after the animation completes
-      setTimeout(() => {
-        ripple.remove();
-      }, 400);
-    });
-  </script>
+</script>
 
 </body>
+
 
 </body>
 </html>

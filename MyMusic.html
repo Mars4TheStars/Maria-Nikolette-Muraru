@@ -8,40 +8,13 @@
     <style>
 
 
-/* Header */
-header {
-  padding: 10px;
-  text-align: center;
-  background: #006870;
-  color: white;
-  
-}
 
-/* Top navigation bar */
-.navbar {
-  display: flex;
-  background-color: #14FFF7;
-  color:#213E53;
-}
-
-/* Navigation bar links */
-.navbar a {
-  color: #213E53;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #006870;
-  color: white;
-}
 
 /* Footer */
 footer {
   padding: 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
   background: #006870;
   color: white;
@@ -182,9 +155,9 @@ footer {
   
   border-radius: 50%;
   border: none;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 191, 255, 0.4) 60%, rgba(0, 119, 190, 0.6) 100%);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 251, 0, 0.872) 60%, rgb(212, 225, 28) 100%);
   box-shadow: inset -5px -5px 15px rgba(0, 64, 128, 0.5), 0 5px 15px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  color: #000000;
   font-weight: bold;
   cursor: pointer;
   outline: none;
@@ -207,7 +180,7 @@ footer {
 }
 
 .bubble-btn:hover {
-  transform: scale(1.05);
+  
   box-shadow: inset -5px -5px 15px rgba(0, 64, 128, 0.4), 0 8px 20px rgba(0, 191, 255, 0.4);
 }
 
@@ -249,7 +222,7 @@ footer {
 
 /* Position Bubble 5: solar sailors start menu */
 .b5 {
-  bottom: 45%;
+  bottom: 60%;
   right: 60%;
   width: 100px; 
   height: 100px;
@@ -297,6 +270,13 @@ footer {
     
 </style>
 </head> <!-- THESE ALL ARE HASHTAGS KIND OF GLOBAL VARIABLES  -->
+
+<!-- Custom AVIF Pointer Structure -->
+<div id="avif-airplane-cursor">
+    <!-- Replace the src path with your local paper-airplane.avif asset file -->
+    <img id="airplane-img" src="Sprites/Asset 3.png" alt="Paper Airplane Cursor">
+</div>
+
 <div id="grad1">
 
 
@@ -347,7 +327,7 @@ Your browser does not support the audio element.
     <button class="close-btn">&times;</button>
     <h2>Golden Gavel Main track</h2>
     <audio controls>
-      <source src="Music/Golden Gavel_Main Track.mp3" type="audio/mpeg">
+      <source src="Music/Golden Gavel_unsetling jazz_Game Jam.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
     <p>year 2025</p> <br>
@@ -429,57 +409,28 @@ Your browser does not support the audio element.
 
  </div>   
 
-<!-- Custom Cursor Graphic Elements -->
-  <div id="custom-cursor"></div>
-  <div id="cursor-follower"></div>
-
-  <!-- JavaScript Interaction Logic Controller -->
+<body>
   <script>
-    const cursorDot = document.getElementById('custom-cursor');
-    const cursorFollower = document.getElementById('cursor-follower');
 
-    // 1. Core Position Tracking
-    window.addEventListener('mousemove', (e) => {
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
+ const cursorWrapper = document.getElementById('avif-airplane-cursor');
 
-      // Bind basic dot instantly to client coordinate points
-      cursorDot.style.left = `${mouseX}px`;
-      cursorDot.style.top = `${mouseY}px`;
-
-      // Follower trails slightly behind automatically via CSS easing values
-      cursorFollower.style.left = `${mouseX}px`;
-      cursorFollower.style.top = `${mouseY}px`;
-    });
-
-    // 2. Interactive Hover States (Selects links, buttons, and your spikeball wrapper)
-    const interactiveElements = document.querySelectorAll('a, button, .image-button, .side-wrapper, .navbar a');
+document.addEventListener('mousemove', (e) => {
+    // 1. Instantly move the cursor to the true mouse coordinates
+    cursorWrapper.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
     
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        document.body.classList.add('cursor-hover');
-      });
-      el.addEventListener('mouseleave', () => {
-        document.body.classList.remove('cursor-hover');
-      });
-    });
+    // 2. Reveal the cursor now that we know exactly where it belongs
+    cursorWrapper.classList.add('is-active');
+}, { passive: true });
 
-    // 3. Click Ripple Wave Generation Physics
-    window.addEventListener('click', (e) => {
-      const ripple = document.createElement('div');
-      ripple.className = 'cursor-click-ripple';
-      ripple.style.left = `${e.clientX}px`;
-      ripple.style.top = `${e.clientY}px`;
-      
-      document.body.appendChild(ripple);
+// Optional: Hide it again if the mouse leaves the browser window entirely
+document.addEventListener('mouseleave', () => {
+    cursorWrapper.classList.remove('is-active');
+});
 
-      // Clean up the node immediately after the animation completes
-      setTimeout(() => {
-        ripple.remove();
-      }, 400);
-    });
-  
-  </script>
+</script>
+
+</body>
+
 
 
 <script>

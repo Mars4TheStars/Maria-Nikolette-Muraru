@@ -8,6 +8,8 @@
 
 <link rel="stylesheet" href="style.css">
 
+
+
 <style>
 * {
   box-sizing: border-box;
@@ -15,17 +17,7 @@
   padding: 0;
 }
 
-/* Background canvas setup */
-#grad1 {
-  background-image: linear-gradient(to top, #E5F9E0, #A3F7B5, #40C9A2, #2F9C95);
-  background-color: #E5F9E0;
-  min-height: 100vh;
-  background-attachment: fixed;
-  padding: 20px;
-  font-family: 'Courier New', monospace;
-  position: relative;
-  overflow-x: hidden;
-}
+
 
 /* Structural elements elevated above canvas */
 header, .navbar, .banner-img, .container, footer {
@@ -37,8 +29,8 @@ header, .navbar, .banner-img, .container, footer {
 header {
   padding: 25px;
   text-align: center;
-  background: #2F9C95;
-  color: white;
+  background: #A3F7B5;
+  color: rgb(10, 9, 9);
   border: 3px solid #000;
   box-shadow: 6px 6px 0px #000;
   margin-bottom: 15px;
@@ -47,19 +39,20 @@ header {
 header h2 {
   font-size: 2.2rem;
   letter-spacing: 1px;
+  color: #000;
 }
 
 header h4 {
   margin-top: 5px;
   font-weight: normal;
-  color: #A3F7B5;
+  color: #000000;
 }
 
 
 /* Top navigation bar */
 .navbar {
   display: flex;
-  background-color: #40C9A2;
+  background-color: #389c2f;
   border: 3px solid #000;
   box-shadow: 6px 6px 0px #000;
   margin-bottom: 25px;
@@ -74,8 +67,8 @@ header h4 {
 }
 
 .navbar a:hover {
-  background-color: #2F9C95;
-  color: #A3F7B5;
+  background-color: #A3F7B5;
+  color: #000000;
 }
 
 /* Banner asset frame */
@@ -93,6 +86,7 @@ header h4 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  
 }
 
 /* Main Content Panels */
@@ -106,20 +100,20 @@ header h4 {
 
 .side {
   flex: 1 1 300px;
-  background-color: #2F9C95;
+  background-color: #389c2f;
   color: white;
 }
 
 .main {
   flex: 2 1 500px;
-  background-color: #A3F7B5;
+  background-color: #e0ff82;
   color: #000;
 }
 
 p {
   font-size: 1.4rem;
   line-height: 1.4;
-  transform: translateZ(20px); /* Bumps text forward in 3D space */
+  
 }
 
 a.mail-link {
@@ -160,7 +154,7 @@ a.mail-link {
 footer {
   padding: 25px;
   text-align: center;
-  background: #E5F9E0;
+  background: #A3F7B5;
   border: 3px solid #000;
   box-shadow: 6px 6px 0px #000;
   margin-top: 30px;
@@ -171,11 +165,38 @@ footer {
   .container, .navbar {   
     flex-direction: column;
   }
+    
+    
 }
 
 </style>
 </head>
 <body>
+  
+<!-- Custom AVIF Pointer Structure -->
+<div id="avif-airplane-cursor">
+    <!-- Replace the src path with your local paper-airplane.avif asset file -->
+    <img id="airplane-img" src="Sprites/Asset 3.png" alt="Paper Airplane Cursor">
+</div>
+
+<div class="sky-background">
+    <!-- Top Left Corner: Tall and heavy cloud -->
+    <div class="cloud cloud-top-left"></div>
+    
+    <!-- Top Right Corner: Long and wispy cloud -->
+    <div class="cloud cloud-top-right"></div>
+    
+    <!-- Bottom Left Corner: Medium puffy cloud -->
+    <div class="cloud cloud-bottom-left"></div>
+    
+    <!-- Bottom Right Corner: Small baby cloud -->
+    <div class="cloud cloud-bottom-right"></div>
+
+    <div class="cloud cloud-mid-left"></div>
+    <div class="cloud cloud-mid-right"></div>
+    <div class="cloud cloud-upper-center"></div>
+    <div class="cloud cloud-lower-left-center"></div>
+
 
 <div id="grad1">
 
@@ -225,63 +246,34 @@ footer {
     <p>Maria-Nikolette Muraru &copy; 2026</p>
   </footer>
 </div>
-
+</div>
 
 </body>
+
 
 <body>
-
-  <!-- Custom Cursor Graphic Elements -->
-  <div id="custom-cursor"></div>
-  <div id="cursor-follower"></div>
-
-  <!-- JavaScript Interaction Logic Controller -->
   <script>
-    const cursorDot = document.getElementById('custom-cursor');
-    const cursorFollower = document.getElementById('cursor-follower');
 
-    // 1. Core Position Tracking
-    window.addEventListener('mousemove', (e) => {
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
+ const cursorWrapper = document.getElementById('avif-airplane-cursor');
 
-      // Bind basic dot instantly to client coordinate points
-      cursorDot.style.left = `${mouseX}px`;
-      cursorDot.style.top = `${mouseY}px`;
-
-      // Follower trails slightly behind automatically via CSS easing values
-      cursorFollower.style.left = `${mouseX}px`;
-      cursorFollower.style.top = `${mouseY}px`;
-    });
-
-    // 2. Interactive Hover States (Selects links, buttons, and your spikeball wrapper)
-    const interactiveElements = document.querySelectorAll('a, button, .image-button, .side-wrapper, .navbar a');
+document.addEventListener('mousemove', (e) => {
+    // 1. Instantly move the cursor to the true mouse coordinates
+    cursorWrapper.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
     
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        document.body.classList.add('cursor-hover');
-      });
-      el.addEventListener('mouseleave', () => {
-        document.body.classList.remove('cursor-hover');
-      });
-    });
+    // 2. Reveal the cursor now that we know exactly where it belongs
+    cursorWrapper.classList.add('is-active');
+}, { passive: true });
 
-    // 3. Click Ripple Wave Generation Physics
-    window.addEventListener('click', (e) => {
-      const ripple = document.createElement('div');
-      ripple.className = 'cursor-click-ripple';
-      ripple.style.left = `${e.clientX}px`;
-      ripple.style.top = `${e.clientY}px`;
-      
-      document.body.appendChild(ripple);
+// Optional: Hide it again if the mouse leaves the browser window entirely
+document.addEventListener('mouseleave', () => {
+    cursorWrapper.classList.remove('is-active');
+});
 
-      // Clean up the node immediately after the animation completes
-      setTimeout(() => {
-        ripple.remove();
-      }, 400);
-    });
-  </script>
+</script>
 
 </body>
+
+
+
 
 </html>
