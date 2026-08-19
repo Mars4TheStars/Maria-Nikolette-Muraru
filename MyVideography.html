@@ -6,28 +6,21 @@
     <style>
 
 
-/* Footer */
-footer {
-  padding: 20px;
-  margin-top: 20px;
-  text-align: center;
-  background: #96897B;
-  color:#D0CE7C;
-}
-
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .container, .navbar, .poem-box, footer{   
     flex-direction: column;
   }
-  .poem-box {
-    width: 100%;
-    flex-direction: column;
-  }
+  
+
+  .floated-iframe {
+  float: center;            
+  scale:100%
+ 
+
 }
 
-
-
+}
 
 
 
@@ -55,24 +48,12 @@ footer {
       display: block;      
     }
 
-    body {background-color:  #D0CE7C}
-    /* page category */
-    h1   {color: #CF995F;
-          padding: 60px;
-          background-color: #628395;
-          text-align:center;
-          box-shadow: 6px 6px 0px #22343d;}
+    
     p    {padding-left: 20px;
       font-size: 18px;
       color: rgb(0, 0, 0);}
-    /* divide of works / title of works */
-    h2 {background-color: #DBAD6A;
-        color: #628395;
-        padding: 20px;
-        }
-    h3{ color: black;
-        padding: 20px;
-        }
+   
+    /*text*/
       h5{color: black;
       padding-left: 35%;
       font-size: 20px;
@@ -110,6 +91,7 @@ footer {
 <!-- Header -->
 <header>
   <h4>Maria-Nikolette Muraru</h4>
+  <h2>My Films</h2>
 </header>
 
  <!-- Navigation Bar -->
@@ -126,9 +108,6 @@ footer {
 </div>
 
 
-
-<h1>My Films</h1>
-
 <p>Table of Contents</p>
 <ol style="list-style-type:upper-roman">
 <li><a href="#Silent Film">Silent Film</a></li>
@@ -139,7 +118,7 @@ footer {
 </ol>
 
 
-<h2>Silent Film</h2>
+<h3>Silent Film</h3>
 <div id="Silent Film" class="floated-iframe"> <!-- div#Silent Film to get it  -->
 <iframe 
 width="420" 
@@ -189,7 +168,7 @@ For in the blink of an eye, it's the end of life.<br>
     </a></div>
 <p> if the video player isn't working press the play button</p>
 
-<h2>Union Station Documentary</h2>
+<h3>Union Station Documentary</h3>
 <div id="Union Station Documentary" class="floated-iframe"></div> <!-- div#Union Station Documentary to get it  -->
 <iframe 
 width="420" 
@@ -208,7 +187,7 @@ allowfullscreen>
 
 
 
-<h2>Animation in After Effects based on the book Crimson Shard</h2>
+<h3>Animation in After Effects based on the book Crimson Shard</h3>
 <div id="Animation in After Effects based on the book Crimson Shard" class="floated-iframe"></div> <!-- div#Animation in After Effects based on the book Crimson Shard to get it  -->
 <iframe 
 width="420" 
@@ -226,7 +205,7 @@ allowfullscreen>
 <p> if the video player isn't working press the play button</p>
 
 
-<h2>Exploration of Editing my skiing with GoPro</h2>
+<h3>Exploration of Editing my skiing with GoPro</h3>
 <div id="Exploration of Editing my skiing with GoPro" class="floated-iframe"></div> <!-- div#Exploration of Editing my skiing with GoPro to get it  -->
 <iframe 
 width="420" 
@@ -245,7 +224,7 @@ allowfullscreen>
 <p> if the video player isn't working press the play button</p>
 
 
-<h2>Stopmotion exploration</h2>
+<h3>Stopmotion exploration</h3>
 <div id="Stopmotion exploration" class="floated-iframe"></div> <!-- div#Stopmotion exploration to get it  -->
 <iframe 
 width="420" 
@@ -266,7 +245,7 @@ allowfullscreen>
 
 <!-- Footer -->
 <footer>
-    <h4>Maria-Nikolette Muraru &copy; 2026</h4>
+    Maria-Nikolette Muraru &copy; 2026
 </footer>
 </div>
 

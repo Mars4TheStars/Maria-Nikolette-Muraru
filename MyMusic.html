@@ -12,16 +12,19 @@
 
 /* Footer */
 footer {
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  background: #006870;
-  color: white;
-  position: fixed;
+  position: absolute;
+  
   bottom: 0;   /* Pins it completely flush to the very bottom */
   left: 20px;     /* Forces it to stretch from the absolute left wall */
   right: 20px;    /* Forces it to stretch to the absolute right wall */
+
+   padding: 25px;
+  text-align: center;
+  background: #A3F7B5;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0px #000;
+  margin-top: 30px;
+  margin-bottom:10px;
   
 }
 
@@ -30,6 +33,11 @@ footer {
 @media screen and (max-width: 700px) {
   .container, .navbar {   
     flex-direction: column;
+  }
+
+  footer {
+    position: absolute;
+
   }
 
   .bubble-btn, .feature-bubble-btn {
@@ -87,9 +95,9 @@ footer {
     /* page category */
     .page-title   {color: #213E53;
           padding: 60px;
-          background-color: #14FFF7; 
+          background-color: #A3F7B5; 
           text-align:center;
-          box-shadow: 6px 6px 0px #213E53;
+          box-shadow: 6px 6px 0px #000000;
         }
     p    {padding-left: 20px;
           font-size: 18px;
@@ -186,7 +194,7 @@ footer {
 
 /* Position Bubble 1:  */
 .b1 {
-  bottom: 45%;
+  bottom: 50%;
   left: 15%;
   width: 90px; 
   height: 90px;
@@ -195,7 +203,7 @@ footer {
 
 /* Position Bubble 2: */
 .b2 {
-  top: 30%;
+  top: 60%;
   right: 50%;
   width: 120px; 
   height: 120px;
@@ -213,7 +221,7 @@ footer {
 
 /* Position Bubble 4*/
 .b4 {
-  bottom: 60%;
+  bottom: 50%;
   right: 25%;
   width: 150px; 
   height: 150px;
@@ -283,13 +291,14 @@ footer {
 <!-- Header -->
 <header>
   <h4>Maria-Nikolette Muraru</h4>
+  <h2> My Music</h2>
 </header>
 
 <!-- Navigation Bar -->
 <div class="navbar">
   <a href="index.html">Main Page</a>
   <a href="MyFiction.html">My Fiction</a>
-  <a href="MySculptures.html">My sculpture</a>
+  <a href="MySculptures.html">My Sculptures</a>
   <a href="MyMusic.html">My Music</a>
   <a href="MyPoetry.html">My Poetry</a>
   <a href="MyPaintings.html">My Paintings</a>
@@ -297,8 +306,6 @@ footer {
   <a href="MyAboutMe.html">About Me</a>
 </div>
 
-
-<h1 class="page-title"> My music </h1>
 
 
 
@@ -403,7 +410,7 @@ Your browser does not support the audio element.
 
 <!-- Footer -->
 <footer>
-    <h4>Maria-Nikolette Muraru &copy; 2026</h4>
+    Maria-Nikolette Muraru &copy; 2026
     </footer>
 
 
