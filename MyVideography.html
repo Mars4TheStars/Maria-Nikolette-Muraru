@@ -8,19 +8,42 @@
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-  .container, .navbar, .poem-box, footer{   
-    flex-direction: column;
+  .container, .navbar, footer{   
+    flex-direction: column ;
   }
-  
 
-  .floated-iframe {
-  float: center;            
-  scale:100%
+  .row-container {   
+    flex-direction: column !important; /* Stacks poem cleanly underneath the video */
+    gap: 25px;
+    padding: 0 15px;                   /* Adds side cushion padding on mobile */
+  }
+
+
+  .floated-iframe{
+  max-width: 90% !important; 
+  align-items: center;
+  }
+  .description-text {
+    max-width: 90% !important;        /* Expand layout to take full screen width */
+    flex: 0 0 100% !important;
+  }
+
+  /* FIX: Forces the video to maintain a perfect aspect ratio without stretching */
+  .floated-iframe iframe {
+    width: 100% !important;            
+    height: auto !important;           /* Unlocks the hardcoded 345px height */
+    aspect-ratio: 4 / 3 !important;   /* Locks standard widescreen proportions */
+  }
+
+  h5 {
+    padding-left: 0 !important;        /* Centers your poem on mobile text tracks */
+    text-align: left;
+    font-size: 1.1rem;                 /* Makes reading text comfortable on phone */
+  }
+
  
-
 }
 
-}
 
 
 
@@ -55,25 +78,37 @@
    
     /*text*/
       h5{color: black;
-      padding-left: 35%;
-      font-size: 20px;
-      text-align: center;
-      box-sizing: border-box; 
+      font-size: 20px;   
       
       
     }
 
-.floated-iframe {
-  float: left;            /* Aligns the iframe to the left */    
-  margin: 5px;
-  
+/*  The Desktop Container (Strictly Side-by-Side) */
+.row-container {
+  display: flex;
+  flex-direction: row;         /* Forces side-by-side layout on desktop */
+  justify-content: space-between; /* Creates perfectly equal space between them */
+  margin-bottom: 5px;         /* Space between different rows */
+  width: 100%;
+
 }
 
-.poem-box {
-  border: 2px transparent; /* Creates a border around the poem box */
-  right: 10px;
-  padding: 10px;
+.floated-iframe {
+  flex:  0 0 48%;                     /* Takes up exactly half the available space */
+  max-width: 48%;              /* Prevents it from crowding the text */
+  max-width: 48%;   
+          
+  }
 
+/* Desktop Text Sizing (Highly Readable) */
+.description-text {
+  flex: 1;                     /* Takes up exactly half the available space */
+  max-width:50%;              /* Prevents text from stretching too wide */
+  border: 2px transparent rgb(51, 0, 255);
+  padding: 5px;               /* Keeps text comfortably away from the blue border */
+  line-height: 1.6;            /* Adds breathing room between sentences */
+  font-size: 1.1rem;           /* Easy to read text size */
+  align-items: right;  
 }
     
     </style> 
@@ -84,6 +119,26 @@
 <div id="avif-airplane-cursor">
     <!-- Replace the src path with your local paper-airplane.avif asset file -->
     <img id="airplane-img" src="Sprites/Asset 3.png" alt="Paper Airplane Cursor">
+</div>
+
+<div class="sky-background">
+    <!-- Top Left Corner: Tall and heavy cloud -->
+    <div class="cloud cloud-top-left"></div>
+    
+    <!-- Top Right Corner: Long and wispy cloud -->
+    <div class="cloud cloud-top-right"></div>
+    
+    <!-- Bottom Left Corner: Medium puffy cloud -->
+    <div class="cloud cloud-bottom-left"></div>
+    
+    <!-- Bottom Right Corner: Small baby cloud -->
+    <div class="cloud cloud-bottom-right"></div>
+
+    <div class="cloud cloud-mid-left"></div>
+    <div class="cloud cloud-mid-right"></div>
+    <div class="cloud cloud-upper-center"></div>
+    <div class="cloud cloud-lower-left-center"></div>
+
 </div>
 
 <div id="grad1">
@@ -101,7 +156,7 @@
   <a href="MySculptures.html">My Sculptures</a>
   <a href="MyMusic.html">My Music</a>
   <a href="MyPoetry.html">My Poetry</a>
-  <a href="MyPaintings.html">My Paintings</a>
+  <a href="MyPaintings.html">My Artworks</a>
   <a href="MyVideography.html">My Films</a>
   <a href="MyAboutMe.html">About Me</a>
 
@@ -117,8 +172,9 @@
 <li><a href="#Stopmotion exploration">Stopmotion exploration</a></li>
 </ol>
 
-
 <h3>Silent Film</h3>
+
+<div class="row-container"> 
 <div id="Silent Film" class="floated-iframe"> <!-- div#Silent Film to get it  -->
 <iframe 
 width="420" 
@@ -131,9 +187,7 @@ allowfullscreen>
 </iframe>
 </div>
 
-
-
-
+<div class="description-text">
 <h5> <u> Accompanying poem of the video: <br></u>
 
  <i>In Life's Chaotic Dance </i> by Maria-Nikolette Muraru</b><br><br><br>
@@ -158,8 +212,10 @@ The final act arrives, when the curtain will descend.<br>
 Cherish the chaos, the beauty, the strife,<br>
 For in the blink of an eye, it's the end of life.<br>
 <br>
-
 </h5>
+
+</div>
+</div>
 
 
   <div class="social-container" >
@@ -169,7 +225,10 @@ For in the blink of an eye, it's the end of life.<br>
 <p> if the video player isn't working press the play button</p>
 
 <h3>Union Station Documentary</h3>
+
+<div class="row-container"> 
 <div id="Union Station Documentary" class="floated-iframe"></div> <!-- div#Union Station Documentary to get it  -->
+
 <iframe 
 width="420" 
 height="345" 
@@ -178,6 +237,7 @@ frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen>
 </iframe>
+</div>
 
 <div class="social-container">
 <a href="https://youtube.com/embed/j1pjeU2EHnE?si=LgU5jBvEens2-7pf" class="image-button">
@@ -185,9 +245,9 @@ allowfullscreen>
     </a></div>
 <p> if the video player isn't working press the play button</p>
 
-
-
 <h3>Animation in After Effects based on the book Crimson Shard</h3>
+
+<div class="row-container"> 
 <div id="Animation in After Effects based on the book Crimson Shard" class="floated-iframe"></div> <!-- div#Animation in After Effects based on the book Crimson Shard to get it  -->
 <iframe 
 width="420" 
@@ -198,6 +258,7 @@ frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen>
 </iframe>
+</div>
 
 <div class="social-container">
 <a href="https://youtube.com/embed/tJVMLNMgyCA?si=IhRnmp0ChWbU1ftU" class="image-button">
@@ -206,6 +267,8 @@ allowfullscreen>
 
 
 <h3>Exploration of Editing my skiing with GoPro</h3>
+
+<div class="row-container"> 
 <div id="Exploration of Editing my skiing with GoPro" class="floated-iframe"></div> <!-- div#Exploration of Editing my skiing with GoPro to get it  -->
 <iframe 
 width="420" 
@@ -216,6 +279,7 @@ frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen>
 </iframe>
+</div>
 
 <div class="social-container">
 <a href="https://youtube.com/embed/a9NKIPC6MBI?si=uJwT4n6hQkSmwmq6" class="image-button">
@@ -225,6 +289,7 @@ allowfullscreen>
 
 
 <h3>Stopmotion exploration</h3>
+<div class="row-container"> 
 <div id="Stopmotion exploration" class="floated-iframe"></div> <!-- div#Stopmotion exploration to get it  -->
 <iframe 
 width="420" 
@@ -235,6 +300,7 @@ frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen>
 </iframe>
+</div>
 
 <div class="social-container">
 <a href="https://youtube.com/embed/XC9kJY7baE8?si=gfuBjYfZggvje-kz" class="image-button">
@@ -247,7 +313,7 @@ allowfullscreen>
 <footer>
     Maria-Nikolette Muraru &copy; 2026
 </footer>
-</div>
+<br><br><br><br><br><br><br><br><br><br>
 
 <body>
   <script>

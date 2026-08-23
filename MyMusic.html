@@ -81,6 +81,11 @@ footer {
     height: 100px !important;
   }
 
+  .b6{
+    width: 120px !important;
+    height: 120px !important;
+  }
+
 
   /* Green Feature Bubble (Beats & Brains)*/
   .feature-bubble-btn.b1 {
@@ -237,6 +242,24 @@ footer {
   animation-delay: 3s;
 }
 
+/* Position Bubble 5: solar sailors start menu */
+.b6 {
+  bottom:40%;
+  right: 60%;
+  width: 120px; 
+  height: 120px;
+  animation-delay: 2s;
+}
+
+/* Position Bubble 5: solar sailors start menu */
+.b7 {
+  bottom:30%;
+  right: 80%;
+  width: 80px; 
+  height: 80px;
+  animation-delay: 0s;
+}
+
 
 /* Styling for the popup container background */
 .popup-overlay {
@@ -285,6 +308,25 @@ footer {
     <img id="airplane-img" src="Sprites/Asset 3.png" alt="Paper Airplane Cursor">
 </div>
 
+  <div class="sky-background">
+    <!-- Top Left Corner: Tall and heavy cloud -->
+    <div class="cloud cloud-top-left"></div>
+    
+    <!-- Top Right Corner: Long and wispy cloud -->
+    <div class="cloud cloud-top-right"></div>
+    
+    <!-- Bottom Left Corner: Medium puffy cloud -->
+    <div class="cloud cloud-bottom-left"></div>
+    
+    <!-- Bottom Right Corner: Small baby cloud -->
+    <div class="cloud cloud-bottom-right"></div>
+
+    <div class="cloud cloud-mid-left"></div>
+    <div class="cloud cloud-mid-right"></div>
+    <div class="cloud cloud-upper-center"></div>
+    <div class="cloud cloud-lower-left-center"></div>
+  </div>
+
 <div id="grad1">
 
 
@@ -301,7 +343,7 @@ footer {
   <a href="MySculptures.html">My Sculptures</a>
   <a href="MyMusic.html">My Music</a>
   <a href="MyPoetry.html">My Poetry</a>
-  <a href="MyPaintings.html">My Paintings</a>
+  <a href="MyPaintings.html">My Artworks</a>
   <a href="MyVideography.html">My Films</a>
   <a href="MyAboutMe.html">About Me</a>
 </div>
@@ -386,8 +428,10 @@ Your browser does not support the audio element.
   <p>Beats & Brain's Steam page</p>
 </a>
 
-<p>Was one of the main composer and sound designers for the game Beats & Brains. 
-  Go check it out on steam!</p>
+<img src="Images/beats and brain anime north.webp" alt="" width="50%">
+
+<p> <b> Was one of the main composer and sound designers for the game Beats & Brains. </b>
+ <i>Go check it out on steam! </i></p>
 
 <ol>
 <li> At Level Up we got PEOPLE’S CHOICE 2ND PLACE! </li>
@@ -402,6 +446,38 @@ Your browser does not support the audio element.
 </div>
 
 
+<!-- The Bubble Button -->
+<button class="bubble-btn b6" data-popup="popup6">We had a Dream, Maybe it was a Nightmare.</button>
+<!-- The Popup Backdrop (Stays the same) -->
+<div class="popup-overlay" id="popup6">
+  <div class="popup-content">
+    <button class="close-btn">&times;</button>
+    <h2>We had a Dream, Maybe it was a Nightmare.</h2>
+    <audio controls>
+    <source src="Music/We had a Deam Maybe it was a Nightmare.wav" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<p>year 2024</p>
+<p> </p>
+  </div>
+</div>
+
+<!-- The Bubble Button -->
+<button class="bubble-btn b7" data-popup="popup7">Redblood</button>
+<!-- The Popup Backdrop (Stays the same) -->
+<div class="popup-overlay" id="popup7">
+  <div class="popup-content">
+    <button class="close-btn">&times;</button>
+    <h2>Redblood</h2>
+    <audio controls>
+    <source src="Music/Muraru,Maria-Nikolette(Mars)-project3-REDBLOOD.wav" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<p>year 2024</p>
+<p>Inspired by Liquid Sky (1982) by Slava Tsukerman, specifically Margaret's monologue scene after she "killed" Adrian. </p>
+  </div>
+</div>
+
 <body>
 
   
@@ -414,8 +490,7 @@ Your browser does not support the audio element.
     </footer>
 
 
- </div>   
-
+   </div> 
 <body>
   <script>
 

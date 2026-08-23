@@ -77,7 +77,8 @@ html, body, a, button, .image-button, .navbar a, iframe {
   padding: 20px; /* <--- THIS IS THE CAUSE for the space around everything!!!! */
   font-family: 'Courier New', monospace;
   position: relative;
-  overflow-x: hidden;
+  
+  
 }
 
 /* Footer */
@@ -91,7 +92,7 @@ footer {
 }
 
 /* --------------------------------------------------------------------------
-   2. Glowing title
+   2. Glowing title (not in use)
    -------------------------------------------------------------------------- */
 
 h1   {color: #000000;
@@ -130,14 +131,17 @@ h1   {color: #000000;
    3. Clouds
    -------------------------------------------------------------------------- */
 
+
+
+
 .sky-background {
-    position: absolute;     /* Fixed keeps the background locked even if you scroll */
+    position: fixed;     /* Fixed keeps the background locked even if you scroll */
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: 0;         /* Forces the layer behind your layout content */
-    
+    z-index: 1;         /* Forces the layer behind your layout content */
+    pointer-events: none;
 }
 
 .cloud {
@@ -327,13 +331,13 @@ h1   {color: #000000;
 @media screen and (max-width: 700px) {
   /* Hide the bottom corner clouds to make space for mobile thumbs and typing */
     .cloud-bottom-left, 
-    .cloud-bottom-right, .cloud-lower-left-center, .cloud-mid-right, .cloud-mid-left  {
+     .cloud-lower-left-center, .cloud-mid-right, .cloud-mid-left  {
         display: none !important;
     }
 
     /* Keep only the top two clouds but scale them down so they don't crowd text */
     .cloud-top-left, 
-    .cloud-top-right {
+    .cloud-top-right, .cloud-bottom-right {
         scale: 50%;
         
     }
@@ -345,6 +349,11 @@ h1   {color: #000000;
     .cloud-top-right { 
       right: -90px; 
       top: -10px;
+    }
+
+    .cloud-bottom-right{
+      left: 150px; 
+      bottom: -20px;
     }
 
     

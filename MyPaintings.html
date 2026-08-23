@@ -6,31 +6,42 @@
 
 
 
-/* evil mushroom*/
-.img1{
-  float: left;
-  padding-bottom:10px;
-  padding-right:10px;
+/*  The Desktop Container (Strictly Side-by-Side) */
+.row-container {
+  display: flex;
+  flex-direction: row;         /* Forces side-by-side layout on desktop */
+  align-items: center;         /* Aligns image and text vertically in the middle */
+  justify-content: space-around; /* Creates perfectly equal space between them */
+  gap: 10px;                   /* The exact gap between the image and text */
+  margin-bottom: 5px;         /* Space between different rows */
+  width: 100%;
+}
+
+/* Desktop Image Sizing */
+.img-box {
+  flex: 1;                     /* Takes up exactly half the available space */
+  max-width: 30%;              /* Prevents it from crowding the text */
+  padding-left: 20px;
+  padding-bottom: 5px;
+}
+/* Image Sizing inside img box */
+.img-box img {
+  width: 100%;                 /* Makes image scale perfectly with the box */
+  max-width: 100%;
+  height: auto;
+  display: block;
   
 }
 
-/* london bus stop*/
-.img2{
-  padding-bottom:10px;
-  padding-right:10px;
-  float: left;
-  padding-bottom: 30px;
-}
-
-.img3{
-  padding-bottom:10px;
-  padding-right:10px;
-  float: left;
-  padding-bottom: 30px;
-}
-
-img{
-  padding-bottom: 10px;
+/* Desktop Text Sizing (Highly Readable) */
+.description-text {
+  flex: 1;                     /* Takes up exactly half the available space */
+  max-width: 60%;              /* Prevents text from stretching too wide */
+  border: 2px transparent rgb(51, 0, 255);
+  padding: 5px;               /* Keeps text comfortably away from the blue border */
+  line-height: 1.6;            /* Adds breathing room between sentences */
+  font-size: 1.1rem;           /* Easy to read text size */
+  align-items: center;  
 }
 
 
@@ -40,10 +51,24 @@ img{
     flex-direction: column;
   }
 
-  img{
-    max-width: 100%;
-    height: auto;
-    width: auto;
+  .row-container {   
+    flex-direction: column;    /* Stacks text under image */
+  }
+
+  .description-text {
+    max-width: 100%;           /* Allows them to take full mobile width */
+    align-items: center; 
+    margin-bottom: 20px; 
+  }
+
+  .img-box{
+    align-items: center; 
+    padding-right: 20px;
+    max-width: 100%;  
+  }
+
+  .container, .navbar, footer {   
+    flex-direction: column;
   }
 }
 
@@ -72,12 +97,32 @@ img{
     <img id="airplane-img" src="Sprites/Asset 3.png" alt="Paper Airplane Cursor">
 </div>
 
+<div class="sky-background">
+    <!-- Top Left Corner: Tall and heavy cloud -->
+    <div class="cloud cloud-top-left"></div>
+    
+    <!-- Top Right Corner: Long and wispy cloud -->
+    <div class="cloud cloud-top-right"></div>
+    
+    <!-- Bottom Left Corner: Medium puffy cloud -->
+    <div class="cloud cloud-bottom-left"></div>
+    
+    <!-- Bottom Right Corner: Small baby cloud -->
+    <div class="cloud cloud-bottom-right"></div>
+
+    <div class="cloud cloud-mid-left"></div>
+    <div class="cloud cloud-mid-right"></div>
+    <div class="cloud cloud-upper-center"></div>
+    <div class="cloud cloud-lower-left-center"></div>
+
+</div>
+
 <div id="grad1">
 
 <!-- Header -->
 <header>
   <h4>Maria-Nikolette Muraru</h4>
-  <h2> My Paintings</h2>
+  <h2> My Artworks</h2>
 </header>
 
 <!-- Navigation Bar -->
@@ -88,7 +133,7 @@ img{
   <a href="MyMusic.html">My Music</a>
   
   <a href="MyPoetry.html">My Poetry</a>
-  <a href="MyPaintings.html">My Paintings</a>
+  <a href="MyPaintings.html">My Artworks</a>
   <a href="MyVideography.html">My Films</a>
   <a href="MyAboutMe.html">About Me</a>
 </div>
@@ -98,62 +143,125 @@ img{
 <p>Table of Contents</p> 
 <ol style="list-style-type:upper-roman"> 
 <div class="dropdown-content"> <!-- dropdown menu -->
+<li><a href="#Y2022">Jump to Year 2022</a></li>
 <li><a href="#Y2023">Jump to Year 2023</a></li>
 <li><a href="#Y2024">Jump to Year 2024</a></li>
 <li><a href="#Y2025">Jump to Year 2025</a></li>
-
+<li><a href="#Y2026">Jump to Year 2026</a></li>
 </ol>
 
+
+<h3> Year 2022</h3>
+<div id="Y2022"></div> <!-- div#Y2023 to get it  -->
+
+<!-- Row 1: Evil Fungi -->
+<div class="row-container">
+  <div class="img-box">
+    <img src="Images/Paintings/Genesis Doors and Windows - screenshot of logo work.png" width="115%" height="600px" >
+  </div>
+<div class="description-text">
+<h5> <p>Genesis Windows and Doors</p> 
+  A company in USA that commissioned a logo for their business. Made using Adobe Illustrator.
+ </div>
+</div>
 
 <h3> Year 2023</h3>
 <div id="Y2023"></div> <!-- div#Y2023 to get it  -->
 
-<img class="img1" src="Images/Mushroom.png" alt="Evil fungi"
-width="520" height="685"> <!-- main image  -->
-
-
-<p>Fungus malus / Evil fungi</p> <!-- name  -->
-<h5>The idea behind the title is to make it seem like a real and living mushroom species. One day I read an article that talked about psychedelic mushrooms. That night, I dreamed about this weird mushroom that is a combination of carnivorous plants and hallucination-inducing mushrooms. Practically jumping out of bed, I sketched to remember the composition. The idea is simple: the mushroom is evil in ‘poisoning’ the land around it (the gradient from a poisonous green to a warmer green). The small eyes on the mushroom cap are there to creep you out. The centered eye (red) is the one that hypnotizes the prey. The tongue is made to look flat, like a road/path. Yet, the visual heaviness that is there because it’s hanging off the logs in the water makes the viewer understands that it is a tongue (plus it’s coming out of the mushroom's mouth); the moment the prey steps on the tongue, it curls up and snaps the prey into its mouth (shown in the sketch).
+<!-- Row 1: Evil Fungi -->
+<div class="row-container">
+  <div class="img-box">
+    <img src="Images/Paintings/Mushroom.png" alt="Evil fungi"> <br>
+    <img src="Images/Paintings/MushroomSketches4action.png" alt="Evil mushroom sketches of tongue function"scale="100%" >
+  </div>
+<div class="description-text">
+<h5> <p>Fungus malus / Evil fungi</p> 
+  The idea behind the title is to make it seem like a real and living mushroom species. One day I read an article that talked about psychedelic mushrooms. That night, I dreamed about this weird mushroom that is a combination of carnivorous plants and hallucination-inducing mushrooms. Practically jumping out of bed, I sketched to remember the composition. The idea is simple: the mushroom is evil in ‘poisoning’ the land around it (the gradient from a poisonous green to a warmer green). The small eyes on the mushroom cap are there to creep you out. The centered eye (red) is the one that hypnotizes the prey. The tongue is made to look flat, like a road/path. Yet, the visual heaviness that is there because it’s hanging off the logs in the water makes the viewer understands that it is a tongue (plus it’s coming out of the mushroom's mouth); the moment the prey steps on the tongue, it curls up and snaps the prey into its mouth (shown in the sketch).
 </h5> <!-- description -->
+ </div>
+</div>
 
-
-<img src="Images/MushroomSketches4action.png" alt="Evil mushroom sketches of tongue function" scale="100%" > <!-- main image  -->
 
 
 <h3> Year 2024</h3>
 <div id="Y2024"></div>
 
-<img src="Images/IMG_3437_Painting.JPG" width="40%" alt="floating face with kitty hugging in a starry sky">
-<br><br> <br><br>
-<img class="img3" src="Images/IMG_0361.png" width="60%" alt="photoshop david & alien like world"> 
-<p>Welcome Dave we want beans</p> <!-- name  -->
+<div class="row-container">
+  <div class="img-box">
+    <img src="Images/Paintings/IMG_3437_Painting.JPG" width="50%" alt="floating face with kitty hugging in a starry sky">
+  </div>
+  <div class="description-text">
 <h5>
-Created in photoshop, while in London. All photos took by me in the V&A Museum and Natural History Museum.
+  pencil, ink and watercolour
 </h5>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<img class="img2" src="Images/London_Non-existantBusStop.png" width="60%" alt="photoshop london bus and black hole"> 
-<p>The Non-existent Bus Stop</p> <!-- name  -->
+  </div>
+</div>
+
+<!-- Row 4: Welcome Dave -->
+<div class="row-container">
+    <div class="img-box">
+        <img  src="Images/Paintings/IMG_0361.png" \alt="photoshop david & alien like world"> 
+    </div>
+<div class="description-text"> 
+  <h5> <p>Welcome Dave we want beans</p>
+Created in photoshop, while in London. All photos took by me in the V&A Museum and Natural History Museum. The fancy beans and toast that are being kidnapped by and aliens where 3d scanned with my ipad pro and later 3d printed.
+</h5>
+</div>
+</div>
+
+
+<!-- Row 5: Bus Stop -->
+<div class="row-container">
+  <div class="img-box">
+    <img  src="Images/Paintings/London_Non-existantBusStop.png" \ alt="photoshop london bus and black hole"> 
+  </div>
+  <div class="description-text">
 <h5>
+  <p>The Non-existent Bus Stop</p>
 The whole thing was supposed to be a vague storytelling experiment. It started with me stumbling upon the issue of looking for the correct
 bus stop and waiting for like 20 minutes at the stop that was the right "acronym" but no the correct street. later I found out that it was
-a service type stop for buses on break. The knight is sculpture named "The Cnihtengild" which was 3D modeled is also from London, you could find him at Devonshire Square.
+a service type stop for buses on break. The knight is sculpture named "The Cnihtengild" which was 3D modeled using Gravity Sketch in a Meta quest 3. The real sculpture can be found
+at Devonshire Square also in London.
 <br><br>
 Created in photoshop, while in London. All photos took by me.
 </h5>
-<br><br>
+</div>
+</div>
 
 <h3> Year 2025</h3>
 <div id="Y2025"></div>
 
-<img src="Images/IMG_3448_angelpainting.JPG" width="400" alt="Angel with green wings with eyes trying to take the dying human with them while their companion is gripping onto thm with an angry face.">
-<p> 
-</p> <!-- description -->
+<div class="row-container">
+  <div class="img-box">
+<img src="Images/Paintings/IMG_3448_angelpainting.JPG" width="400" alt="Angel with green wings with eyes trying to take the dying human with them while their companion is gripping onto thm with an angry face.">
+  </div>
+<div class="description-text"> 
+  <h5> <p>A wrong feeling</p>
+Watercolour and gouache. A dramatization of when the "goodies" of society try to control peoples gender presentations.
+</h5>
+</div>
+</div>
+
+<h3> Year 2026</h3>
+<div id="Y2026"></div>
+
+<div class="row-container">
+  <div class="img-box">
+<img src="Images/Paintings/Digital-spider-IMG_6546.PNG" width="400" alt="Angel with green wings with eyes trying to take the dying human with them while their companion is gripping onto thm with an angry face.">
+</div>
+<div class="description-text"> 
+  <h5> <p>Spider</p>
+Procreate. Made based on a internet challenge, when you draw with a black and white screen.
+</h5>
+</div>
+</div>
+
 
 <!-- Footer -->
 <footer>
     Maria-Nikolette Muraru &copy; 2026
 </footer>
-</div>
+<br><br><br><br><br><br><br><br><br><br>
 
 
 
