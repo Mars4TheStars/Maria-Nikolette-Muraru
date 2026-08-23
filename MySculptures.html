@@ -50,6 +50,20 @@
   .container, .navbar {   
     flex-direction: column;
   }
+  
+
+  .floated-iframe{
+  max-width: 90% !important; 
+  align-items: center;
+  
+  }
+  
+.floated-iframe iframe {
+    width: 100% !important;            
+    height: auto !important;           /* Unlocks the hardcoded 345px height */
+    aspect-ratio: 4 / 3 !important;   /* Locks standard widescreen proportions */
+  }
+
 }
 
   
@@ -123,7 +137,7 @@
 </div>
 
 
-<h3>  Everything is in your hand(s) - project video  </h3>
+<h3>  Everything is in your hand(s) </h3>
 
 <iframe class="floated-iframe"
 width="420" 
