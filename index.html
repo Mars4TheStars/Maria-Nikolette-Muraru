@@ -102,11 +102,19 @@ a.mail-link {
   .container, .navbar {   
     flex-direction: column;
   }
+
+  .main, .side{
+    width: fit-content;
+    width: 100%;
+    flex:1;
+  }
     
-  .container {
-  scale: 98%;
-  margin-right: 5px;
-  margin-left: -5px; ;
+  .social-container {
+  display: flex;            
+  flex-direction: column;      
+  align-items: center;      
+  gap: 25px;
+  margin-top: 20px; 
   }
     
 }
@@ -171,7 +179,7 @@ a.mail-link {
     </div>
 
     <div class="main interactive-card">
-      <p><u>Contact Me:</u> <a href="mailto:marianikolettemuraru@gmail.com" class="mail-link">marianikolettemuraru@gmail.com</a></p>
+      <p><u>Contact Me:</u> </p> <small> <a href="mailto:marianikolettemuraru@gmail.com" class="mail-link">marianikolettemuraru@gmail.com</a></small>
       <p style="margin-top: 15px;"><u>Follow me on:</u></p>
 
       <div class="social-container" style="transform: translateZ(25px);">
